@@ -1,0 +1,5 @@
+{"_id":"DT100","firstName":"Steven","lastName":"King","specialty":"Dermatologist","phone":"(155) 555-2234","departmentId":"Dep40","email":"steven.king@gmail.com","certifications":["CPCT","CNA","CCS-P"]}
+{"_id":"DT101","firstName":"Neena","lastName":"Kochhar","specialty":"Gastroenterologist","phone":"(355) 444-1234","departmentId":"Dep20","email":"neena.kochhar@gmail.com","certifications":["RBT","CPT","CNA","CPC"]}
+{"_id":"DT102","firstName":"Elliot","lastName":"Reid","specialty":"Ophthalmologist","phone":"(355) 444-98765","departmentId":"Dep40","email":"elliot@gmail.com","certifications":["RBT","CPhT","CPC"]}
+{"_id":"DT103","firstName":"Keith","lastName":"De Haan","specialty":"Surgical Attending Physician","phone":"(369) 654-9299","departmentId":"Dep10","email":"keith@gmail.com","certifications":["CPhT","CCMA"]}
+{"_id":"DT104","firstName":"Lex","lastName":"Dudemeister","specialty":"Infectious disease","phone":"(429) 690-9229","departmentId":"Dep40","email":"dudemeister@gmail.com","certifications":["CCS-P","CCMA"]}
