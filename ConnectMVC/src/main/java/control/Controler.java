@@ -23,7 +23,7 @@ public class Controler extends HttpServlet{
 		DoctorFacade doctorFacade= new DoctorImpl();
 		List<Doctor> list= doctorFacade.getDoctorsBySpecialty("Infectious disease");
 		req.setAttribute("list", list);
-		req.getRequestDispatcher("Show.jsp").forward(req, resp);
+		req.getRequestDispatcher("/Show.jsp").forward(req, resp);
 	
 	}
 }
