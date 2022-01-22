@@ -29,7 +29,7 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		EntityTransaction tr = em.getTransaction();
 		try {
 			tr.begin();
-			List<Product> list = em.createNativeQuery("select * from  [dbo].[Product] order by  [ProductID]", Product.class).getResultList();
+			List<Product> list = em.createNativeQuery("select top 9 *from  [dbo].[Product] order by  [ProductID] desc", Product.class).getResultList();
 			tr.commit();
 			return list;
 		} catch (Exception e) {

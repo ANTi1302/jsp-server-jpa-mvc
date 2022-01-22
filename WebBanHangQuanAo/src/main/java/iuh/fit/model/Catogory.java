@@ -12,10 +12,10 @@ import javax.persistence.OneToMany;
 public class Catogory implements Serializable{
 
 	@Id
-	private int catogoryID;
 	@Column(name = "CatogoryID",columnDefinition = "nvarchar(50)")
-	private String catogoryName;
+	private int catogoryID;
 	@Column(name = "CatogoryName",columnDefinition = "nvarchar(500)")
+	private String catogoryName;
 	private String icon;
 	
 	@OneToMany(mappedBy = "categoryID")

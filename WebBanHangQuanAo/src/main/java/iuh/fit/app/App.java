@@ -19,7 +19,7 @@ public class App {
 		ProductFacade productFacade= new ProductImpl();
 		List<Product> list= productFacade.dsProduct();
 		for (Product product : list) {
-			System.out.println(product);
+			System.out.println(product.getImageLink());
 		}
 		
 	}
