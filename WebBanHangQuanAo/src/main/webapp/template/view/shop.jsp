@@ -210,7 +210,7 @@
                         <nav aria-label="navigation">
                             <ul class="pagination justify-content-end mt-50">
                             <c:forEach begin="1" end="${endpage}" var="i">
-                             <li class="page-item active"><a class="page-link" href="?index=${i}">${i}.</a></li>
+                             <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?index=${i}">${i}.</a></li>
                             </c:forEach>
                                
 <%--                                ?index=${i} --%>

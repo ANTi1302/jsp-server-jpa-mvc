@@ -48,8 +48,8 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="<c:url value="/template/view/index.jsp" />">Home</a></li>
-                    <li><a href="<c:url value="/template/view/shop.jsp" />">Shop</a></li>
+                    <li class="active"><a href="<c:url value="home" />">Home</a></li>
+                    <li><a href="<c:url value="shop" />">Shop</a></li>
                     <li><a href="<c:url value="/template/view/product-details.jsp" />">Product</a></li>
                     <li><a href="<c:url value="/template/view/cart.jsp" />">Cart</a></li>
                     <li><a href="<c:url value="/template/view/checkout.jsp" />">Checkout</a></li>

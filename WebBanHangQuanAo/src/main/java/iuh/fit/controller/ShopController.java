@@ -47,7 +47,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	
 	req.setAttribute("dsProduct", products);
 	req.setAttribute("endpage", endpage);
-	
+	req.setAttribute("tag", index);
 
 	req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
 }
