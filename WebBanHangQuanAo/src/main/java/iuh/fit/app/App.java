@@ -18,11 +18,11 @@ public class App {
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
 		List<Product> list= productFacade.dsProductTop6(3);
-		for (Product product : list) {
-			System.out.println(product);
-		}
+//		for (Product product : list) {
+//			System.out.println(product);
+//		}
 		
-		
+//		System.out.println(productFacade.thongTinChiTiet("1"));
 		
 	}
 }

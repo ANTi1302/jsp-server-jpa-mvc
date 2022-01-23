@@ -56,7 +56,7 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		}
 		return 0;
 	}
-
+//Phan trang
 //	select * from [dbo].[Product]
 //			order by [ProductID]
 //			offset 0 row fetch next 6 row only
@@ -91,6 +91,12 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 			tr.rollback();
 		}
 		return null;
+	}
+
+//	select * from [dbo].[Product] where productID=1
+	@Override
+	public Product thongTinChiTiet(int ma) throws RemoteException {
+		return (Product) getSingle("select * from [dbo].[Product] where productID= '" + ma + "'", Product.class);
 	}
 	
 	

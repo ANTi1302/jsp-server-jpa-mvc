@@ -180,7 +180,7 @@
                                 <div class="product-meta-data">
                                     <div class="line"></div>
                                     <p class="product-price">$${o.price}</p>
-                                    <a href="<c:url value="/template/view/product-details.jsp" />">
+                                    <a href="<c:url value="/details?idProduct=${o.productID}" />">
                                         <h6>${o.productName}</h6>
                                     </a>
                                 </div>
@@ -208,13 +208,17 @@
                     <div class="col-12">
                         <!-- Pagination -->
                         <nav aria-label="navigation">
-                            <ul class="pagination justify-content-end mt-50">
+                          <ul class="pagination justify-content-end mt-50">
+                          <c:if test="${tag>1 }">
+                           <li class="page-item"><a href="?index=${tag-1}">Previous</a> </li>
+                          </c:if>
                             <c:forEach begin="1" end="${endpage}" var="i">
                              <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?index=${i}">${i}.</a></li>
                             </c:forEach>
-                               
+                            <c:if test="${tag<endpage }">
+                               <li class="page-item"><a href="?index=${tag+1}">Next</a> </li>
 <%--                                ?index=${i} --%>
-                         
+                          </c:if>
                             </ul>
                         </nav>
                     </div>

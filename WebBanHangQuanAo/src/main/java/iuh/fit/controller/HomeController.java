@@ -28,11 +28,13 @@ public class HomeController extends HttpServlet{
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
 		List<Product> list= productFacade.dsProductTop9();
+		
+		
+//		String[] c={"Home","Shop","Product","Cart","Check out"};
+		
+		
 		req.setAttribute("listProduct", list);
-		
-		
-		
-		
+//		req.setAttribute("tuade", c);
 		req.getRequestDispatcher("/template/view/index.jsp").forward(req, resp);
 	}
 	

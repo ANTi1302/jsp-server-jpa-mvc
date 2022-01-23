@@ -22,9 +22,7 @@ public class ShopController extends HttpServlet{
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	EntityManager em = HibernateUtil.getInstance().getEntityManager();
 	ProductFacade productFacade= new ProductImpl();
-	
 	String indexPage= req.getParameter("index");
-	
 	
 	
 	if (indexPage ==null) {
@@ -32,6 +30,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	}
 	int index= Integer.parseInt(indexPage);
 	List<Product> products= productFacade.dsProductTop6(index);
+	
 	
 	
 	//Phan trang
@@ -43,12 +42,10 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	}
 	
 	
-	
-	
 	req.setAttribute("dsProduct", products);
 	req.setAttribute("endpage", endpage);
 	req.setAttribute("tag", index);
-
 	req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
+	
 }
 }
