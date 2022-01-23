@@ -33,7 +33,7 @@
         <div class="products-catagories-area clearfix">
         
             <div class="amado-pro-catagory clearfix">
-   <c:forEach items="${listProduct}" var="c"> 
+  				<c:forEach items="${listProduct}" var="c"> 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="<c:url value="/template/view/shop.jsp" />">

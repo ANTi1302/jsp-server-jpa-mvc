@@ -27,7 +27,7 @@ public class HomeController extends HttpServlet{
 		//khoi tao
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
-		List<Product> list= productFacade.dsProduct();
+		List<Product> list= productFacade.dsProductTop9();
 		req.setAttribute("listProduct", list);
 		
 		

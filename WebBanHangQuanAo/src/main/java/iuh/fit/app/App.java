@@ -17,10 +17,12 @@ public class App {
 	public static void main(String[] args) throws RemoteException {
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
-		List<Product> list= productFacade.dsProduct();
+		List<Product> list= productFacade.dsProductTop6(3);
 		for (Product product : list) {
-			System.out.println(product.getImageLink());
+			System.out.println(product);
 		}
+		
+		
 		
 	}
 }
