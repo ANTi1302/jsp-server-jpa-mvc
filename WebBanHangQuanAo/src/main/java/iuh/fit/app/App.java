@@ -22,7 +22,7 @@ public class App {
 //			System.out.println(product);
 //		}
 		
-//		System.out.println(productFacade.thongTinChiTiet("1"));
+		System.out.println(productFacade.demSLKhiSearch("2"));
 		
 	}
 }

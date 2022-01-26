@@ -31,8 +31,6 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	int index= Integer.parseInt(indexPage);
 	List<Product> products= productFacade.dsProductTop6(index);
 	
-	
-	
 	//Phan trang
 	int soLuong= productFacade.demSLProduct();
 	

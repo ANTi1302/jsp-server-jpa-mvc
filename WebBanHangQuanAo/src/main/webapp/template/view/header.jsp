@@ -9,9 +9,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="search-content">
-                        <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="<c:url value="/template/img/core-img/search.png" />" alt=""></button>
+                        <form action="search" method="get">
+                            <input type="search" name="txt" id="search" placeholder="Type your keyword...">
+                            <button type="submit"><img src="<c:url value="/template/img/core-img/search.png" />" alt="?txt="></button>
                         </form>
                     </div>
                 </div>
@@ -77,5 +77,3 @@
         </header>
           
         <!-- Header Area End -->
-        
-            <!-- ##### Footer Area End ##### -->

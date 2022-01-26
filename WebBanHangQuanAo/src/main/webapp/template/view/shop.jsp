@@ -127,7 +127,7 @@
                         <div class="product-topbar d-xl-flex align-items-end justify-content-between">
                             <!-- Total Products -->
                             <div class="total-products">
-                                <p>Showing 1-8 0f 25</p>
+                                <p>Showing 1-6 0f 25</p>
                                 <div class="view d-flex">
                                     <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
                                     <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
@@ -213,7 +213,9 @@
                            <li class="page-item"><a href="?index=${tag-1}">Previous</a> </li>
                           </c:if>
                             <c:forEach begin="1" end="${endpage}" var="i">
-                             <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?index=${i}">${i}.</a></li>
+                             
+                             <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?txt=${tenS}&index=${i}">${i}.</a></li>
+                         
                             </c:forEach>
                             <c:if test="${tag<endpage }">
                                <li class="page-item"><a href="?index=${tag+1}">Next</a> </li>

@@ -56,6 +56,7 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		}
 		return 0;
 	}
+
 //Phan trang
 //	select * from [dbo].[Product]
 //			order by [ProductID]
@@ -76,7 +77,27 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		}
 		return null;
 	}
-
+//	select * from [dbo].[Product]
+//			where [ProductName] like N'%2%'
+//					order by [ProductID]
+//					offset 0 row fetch next 6 row only
+	@Override
+	public List<Product> dsProductTop6(int index, String ten) throws RemoteException {
+		EntityTransaction tr = em.getTransaction();
+		try {
+			tr.begin();
+			List<Product> list = em.createNativeQuery("select * from [dbo].[Product]\r\n"
+					+ "where [ProductName] like N'%"+ten+"%'\r\n"
+					+ "		order by [ProductID]\r\n"
+					+ "		offset "+((index-1)*3)+" row fetch next 6 row only ", Product.class).getResultList();
+			tr.commit();
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			tr.rollback();
+		}
+		return null;
+	}
 
 	@Override
 	public List<Product> dsProductTop9() throws RemoteException {
@@ -98,6 +119,38 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 	public Product thongTinChiTiet(int ma) throws RemoteException {
 		return (Product) getSingle("select * from [dbo].[Product] where productID= '" + ma + "'", Product.class);
 	}
+
+//	select *from [dbo].[Product]
+//			where [ProductName] like N'%2%'
+	@Override
+	public List<Product> timKiemTheoTen(String ten) throws RemoteException {
+		List<?> ds = getList("select *from [dbo].[Product]\r\n"
+				+ "where [ProductName] like N'%"+ten+"%'", Product.class);
+		return (List<Product>) ds;
+	}
+
+//	select count(*)from [dbo].[Product]
+//	where [ProductName] like N'%2%' 
+	@Override
+	public int demSLKhiSearch(String ten) throws RemoteException {
+		EntityTransaction tr = em.getTransaction();		
+		try {
+			tr.begin();
+		String query = "select count(*)from [dbo].[Product]\r\n"
+				+ "where [ProductName] like N'%"+ten+"%' ";
+
+		int soHoaDon = (int) em.createNativeQuery(query).getSingleResult();
+		tr.commit();
+		return  soHoaDon;
+		} catch (Exception e) {
+			e.printStackTrace();
+			tr.rollback();
+		}
+		return 0;
+	}
+
+
+
 	
 	
 
