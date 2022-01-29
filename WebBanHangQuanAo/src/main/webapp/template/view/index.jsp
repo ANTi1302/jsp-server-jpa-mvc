@@ -19,8 +19,6 @@
     <!-- Core Style CSS -->
  	<link rel="stylesheet" href="<c:url value="/template/css/font-awesome.min.css" />" >
     <link rel="stylesheet" href="<c:url value="/template/css/core-style.css" /> ">
-<link rel="stylesheet"
-	href="<c:url value="/template/css/position.css" />">
 </head>
 
 <body>
@@ -37,7 +35,7 @@
   				<c:forEach items="${listProduct}" var="c"> 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="<c:url value="/${c.productName}?idProduct=${c.productID}" />">
+                    <a href="<c:url value="/details/${c.productName}?idProduct=${c.productID}" />">
                         <img src="<c:url value="${c.imageLink}" />" alt="${c.productName}">
                         <!-- Hover Content -->
                         <div class="hover-content">

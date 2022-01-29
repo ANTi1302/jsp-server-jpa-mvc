@@ -14,7 +14,7 @@ import iuh.fit.impl.ProductImpl;
 import iuh.fit.model.Product;
 import iuh.fit.until.HibernateUtil;
 
-@WebServlet(urlPatterns = {"/details","/"})
+@WebServlet(urlPatterns = {"/details/*"})
 public class ProductDetailController extends HttpServlet{
 
 	/**

@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@page pageEncoding="UTF-8" %>
+<link rel="stylesheet"
+	href="<c:url value="/template/css/position.css" />">
   <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
