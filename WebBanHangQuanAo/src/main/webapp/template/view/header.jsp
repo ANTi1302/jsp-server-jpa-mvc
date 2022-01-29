@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
-
+<%@page pageEncoding="UTF-8" %>
   <!-- Search Wrapper Area Start -->
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
@@ -11,7 +11,7 @@
                     <div class="search-content">
                     <div class="dropdown">
                         <form action="search" method="get">
-                            <input type="search" name="txt" class="search-txt" value="${tenS}" placeholder="Type your keyword...">
+                            <input type="search" name="txt" class="search-txt" value="${tenS}" placeholder="Tìm sản phẩm, thương hiệu, và tên shop ...">
                             <button type="submit"><img src="<c:url value="/template/img/core-img/search.png" />" alt="?txt="></button>
                            <div class="dropdown-list">
           				  <div class="dropdown-item"><a href="">Figma</a></div>
