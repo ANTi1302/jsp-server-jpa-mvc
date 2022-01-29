@@ -14,11 +14,17 @@ import iuh.fit.impl.ProductImpl;
 import iuh.fit.model.Product;
 import iuh.fit.until.HibernateUtil;
 
-@WebServlet(urlPatterns = "/details")
+@WebServlet(urlPatterns = {"/details","/"})
 public class ProductDetailController extends HttpServlet{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		@SuppressWarnings("unused")
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
 		String idReq= req.getParameter("idProduct");

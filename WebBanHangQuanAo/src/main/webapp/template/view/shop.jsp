@@ -19,7 +19,8 @@
     <!-- Core Style CSS -->
  	<link rel="stylesheet" href="<c:url value="/template/css/font-awesome.min.css" />" >
     <link rel="stylesheet" href="<c:url value="/template/css/core-style.css" /> ">
-
+<link rel="stylesheet"
+	href="<c:url value="/template/css/position.css" />">
 </head>
 
 <body>
@@ -180,7 +181,7 @@
                                 <div class="product-meta-data">
                                     <div class="line"></div>
                                     <p class="product-price">$${o.price}</p>
-                                    <a href="<c:url value="/details?idProduct=${o.productID}" />">
+                                    <a href="<c:url value="/${o.productName}?idProduct=${o.productID}" />">
                                         <h6>${o.productName}</h6>
                                     </a>
                                 </div>

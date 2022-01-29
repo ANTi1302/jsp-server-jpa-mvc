@@ -9,10 +9,17 @@
             <div class="row">
                 <div class="col-12">
                     <div class="search-content">
+                    <div class="dropdown">
                         <form action="search" method="get">
-                            <input type="search" name="txt" id="search" placeholder="Type your keyword...">
+                            <input type="search" name="txt" class="search-txt" value="${tenS}" placeholder="Type your keyword...">
                             <button type="submit"><img src="<c:url value="/template/img/core-img/search.png" />" alt="?txt="></button>
+                           <div class="dropdown-list">
+          				  <div class="dropdown-item"><a href="">Figma</a></div>
+           				 <div class="dropdown-item"><a href="">Figma</a></div>
+          				  <div class="dropdown-item"><a href="">Figma</a></div>
+       					 </div>
                         </form>
+                     </div>
                     </div>
                 </div>
             </div>
