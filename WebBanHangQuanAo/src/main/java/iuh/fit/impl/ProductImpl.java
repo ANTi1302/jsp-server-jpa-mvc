@@ -1,6 +1,7 @@
 package iuh.fit.impl;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityTransaction;
@@ -149,7 +150,10 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		return 0;
 	}
 
-
+	 public Product getProduct(String txt) throws RemoteException {
+		 return (Product) getSingle("select * from Product where productID = '" + txt+"'" , Product.class);
+	        
+	    }
 
 	
 	

@@ -16,4 +16,5 @@ public interface ProductFacade extends Remote{
 	public int demSLKhiSearch(String ten) throws RemoteException;
 	public Product thongTinChiTiet(int id) throws RemoteException;
 	public List<Product> timKiemTheoTen(String ten) throws RemoteException;
+	public Product getProduct(String txt)throws RemoteException;;
 }

@@ -28,7 +28,7 @@ public class Product implements Serializable{
 	@Column(name = "Description")
 	private String description;
 	@Column(name = "Price")
-	private String price;
+	private double price;
 	@Column(name = "imageLink", columnDefinition = "nvarchar(1000)")
 	private String imageLink;
 	@ManyToOne
@@ -38,7 +38,7 @@ public class Product implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "SellerID")
 	private Users sellerID;
-	private String amount;
+	private int amount;
 	
 	@OneToMany(mappedBy = "productsID")
 	private List<Cart> carts;
@@ -67,13 +67,7 @@ public class Product implements Serializable{
 		this.description = description;
 	}
 
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
+	
 
 	public String getImageLink() {
 		return imageLink;
@@ -98,11 +92,21 @@ public class Product implements Serializable{
 	}
 
 
-	public String getAmount() {
+	
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
@@ -118,8 +122,8 @@ public class Product implements Serializable{
 
 
 
-	public Product(int productID, String productName, String description, String price, String imageLink,
-			Catogory categoryID, Users sellerID, String amount) {
+	public Product(int productID, String productName, String description, Double price, String imageLink,
+			Catogory categoryID, Users sellerID, int amount) {
 		super();
 		this.productID = productID;
 		this.productName = productName;

@@ -37,7 +37,7 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mt-50">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="home">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Furniture</a></li>
                                 <li class="breadcrumb-item"><a href="#">${dsProductChiTiet.categoryID.catogoryName}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">${dsProductChiTiet.productName}</li>
@@ -126,7 +126,7 @@
                                         <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
-                                <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                                <button type="submit" name="addtocart" value="id" class="btn amado-btn">Add to cart</button>
                             </form>
 
                         </div>

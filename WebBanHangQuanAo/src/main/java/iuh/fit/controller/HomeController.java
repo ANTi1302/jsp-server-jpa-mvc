@@ -22,7 +22,6 @@ public class HomeController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//thiec lap tieng viet
 		resp.setContentType("text/html");
-		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		//khoi tao
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();

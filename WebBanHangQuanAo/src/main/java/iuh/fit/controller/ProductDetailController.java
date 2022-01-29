@@ -14,7 +14,7 @@ import iuh.fit.impl.ProductImpl;
 import iuh.fit.model.Product;
 import iuh.fit.until.HibernateUtil;
 
-@WebServlet(urlPatterns = {"/details/*"})
+@WebServlet(urlPatterns = {"/details/*","/detail"})
 public class ProductDetailController extends HttpServlet{
 
 	/**
@@ -31,6 +31,9 @@ public class ProductDetailController extends HttpServlet{
 		int id= Integer.parseInt(idReq);
 		Product product=productFacade.thongTinChiTiet(id);
 		req.setAttribute("dsProductChiTiet", product);
+		
+		
+		
 		req.getRequestDispatcher("/template/view/product-details.jsp").forward(req, resp);
 	}
 }

@@ -106,4 +106,5 @@ public class AbstractImpl extends UnicastRemoteObject{
 		return em.createNativeQuery(sql, classname)
 				.getSingleResult();
 	}
+	
 }
