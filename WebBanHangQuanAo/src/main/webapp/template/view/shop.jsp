@@ -195,7 +195,7 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
                                     <div class="cart">
-                                        <a href="<c:url value="/cart?id='${o.productID}'" />" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="<c:url value="/template/img/core-img/cart.png" />" alt=""></a>
+                                        <a href="<c:url value="/cart?id=${o.productID}" />" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="<c:url value="/template/img/core-img/cart.png" />" alt=""></a>
                                     </div>
                                 </div>
                             </div>

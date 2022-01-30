@@ -60,7 +60,7 @@
                     <li  class="active"><a href="<c:url value="home" />">Home</a></li>
                     <li><a href="<c:url value="shop" />">Shop</a></li>
                     <li><a href="<c:url value="" />">Product</a></li>
-                    <li><a href="<c:url value="/template/view/cart.jsp" />">Cart</a></li>
+                    <li><a href="<c:url value="print" />">Cart</a></li>
                     <li><a href="<c:url value="/template/view/checkout.jsp" />">Checkout</a></li>
                 </ul>
             </nav>

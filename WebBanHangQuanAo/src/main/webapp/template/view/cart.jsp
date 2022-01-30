@@ -48,17 +48,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${list}" var="i">
+                                <c:forEach items="${list}" var="o">
                                 
                                 <tr>
                                         <td class="cart_product_img">
-                                            <a href="#"><img src="<c:url value="${i.imageLink}" />" alt="Product"></a>
+                                            <a href="#"><img src="<c:url value="${o.imageLink}" />" alt="Product"></a>
                                         </td>
                                         <td class="cart_product_desc">
-                                            <h5>${i.productName}</h5>
+                                            <h5>${o.productName}</h5>
                                         </td>
                                         <td class="price">
-                                            <span>$${i.price}</span>
+                                            <span>$${o.price}</span>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
