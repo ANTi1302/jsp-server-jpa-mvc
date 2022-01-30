@@ -15,7 +15,7 @@
 
     <!-- Favicon  -->
    <link rel="icon" href="<c:url value="/template/img/core-img/favicon.ico" />">
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- Core Style CSS -->
  	<link rel="stylesheet" href="<c:url value="/template/css/font-awesome.min.css" />" >
     <link rel="stylesheet" href="<c:url value="/template/css/core-style.css" /> ">

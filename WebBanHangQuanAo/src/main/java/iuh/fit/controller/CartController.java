@@ -34,10 +34,10 @@ public class CartController extends HttpServlet {
 			}
 		}
 		if (txt.isEmpty()) {
-			txt = id;
-		} else {
-			txt = txt + "," + id;
-		}
+            txt = id;
+        } else {
+            txt = txt + "," + id;
+        }
 		Cookie c = new Cookie("id", txt);
 		c.setMaxAge(60 * 60 * 24);
 		resp.addCookie(c);
