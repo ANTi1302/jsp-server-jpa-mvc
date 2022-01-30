@@ -16,8 +16,13 @@ public class UserImpl extends AbstractImpl implements UsersFacade {
 //			where [Username]='admin' and Password=1234
 	@Override
 	public Users timKiemUser(String ten, String pass) throws RemoteException {
-		return (Users) getSingle("select *from [dbo].[Users]\r\n"
-				+ "where [Username]='"+ten+"' and Password=" +pass, Users.class);
+		try {
+			return (Users) getSingle("select *from [dbo].[Users]\r\n"
+					+ "where [Username]='"+ten+"' and Password=" +pass, Users.class);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
 	}
 
 }

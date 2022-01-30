@@ -7,7 +7,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import iuh.fit.facade.ProductFacade;
+import iuh.fit.facade.UsersFacade;
 import iuh.fit.impl.ProductImpl;
+import iuh.fit.impl.UserImpl;
 import iuh.fit.model.Product;
 import iuh.fit.until.HibernateUtil;
 
@@ -17,12 +19,13 @@ public class App {
 	public static void main(String[] args) throws RemoteException {
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
+		UsersFacade usersFacade=new UserImpl();
 		List<Product> list= productFacade.dsProductTop6(3);
 //		for (Product product : list) {
 //			System.out.println(product);
 //		}
 		
-		System.out.println(productFacade.getProduct("2"));
+		System.out.println(usersFacade.timKiemUser("admin", "12345"));
 		
 	}
 }
