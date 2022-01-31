@@ -215,7 +215,7 @@
                           </c:if>
                             <c:forEach begin="1" end="${endpage}" var="i">
                              
-                             <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?txt=${tenS}&index=${i}">${i}.</a></li>
+                             <li class= "${tag==i? "page-item active" : "page-item" }" ><a class="page-link" href="?txt=${tenS}&index=${i}&txtC=${tenC}">${i}.</a></li>
                          
                             </c:forEach>
                             <c:if test="${tag<endpage }">

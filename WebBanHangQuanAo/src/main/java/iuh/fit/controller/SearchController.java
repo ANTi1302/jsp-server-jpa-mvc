@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.hql.ast.origin.hql.resolve.GeneratedHQLResolver.intermediateIndexOperation_return;
+
 import iuh.fit.facade.ProductFacade;
 import iuh.fit.impl.ProductImpl;
 import iuh.fit.model.Product;
 import iuh.fit.until.HibernateUtil;
 
-@WebServlet(urlPatterns = {"/search"})
+@WebServlet(urlPatterns = {"/details/search","/search"})
 public class SearchController extends HttpServlet{
 
 	@Override
@@ -40,7 +42,6 @@ public class SearchController extends HttpServlet{
 		if (soLuong%3 !=0) {
 			endpage++;
 		}
-		
 		
 		req.setAttribute("dsProduct", products);
 		req.setAttribute("endpage", endpage);

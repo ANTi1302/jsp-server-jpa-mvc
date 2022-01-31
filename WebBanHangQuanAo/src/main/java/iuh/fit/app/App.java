@@ -20,12 +20,12 @@ public class App {
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
 		UsersFacade usersFacade=new UserImpl();
-		List<Product> list= productFacade.dsProductTop6(3);
-//		for (Product product : list) {
-//			System.out.println(product);
-//		}
+		List<Product> list= productFacade.dsProductTheoIDCatorogyTop6(1,4);
+		for (Product product : list) {
+			System.out.println(product);
+		}
 		
-		System.out.println(usersFacade.timKiemUser("admin", "12345"));
+		System.out.println(productFacade.demSLKhiSearchTheoIDCatorogy(4));
 		
 	}
 }
