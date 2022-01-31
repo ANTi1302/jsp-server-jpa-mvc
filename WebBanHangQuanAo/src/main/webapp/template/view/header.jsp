@@ -48,15 +48,12 @@
 									<i class="fas fa-search"></i>
 								</div>
 								<div class="dropdown-list">
+								<c:forEach items="sessionScope.history">
 								<div class="dropdown-item">
-									<a href="">Figma</a>
+									<a href="">${sessionScope.history}</a>
 								</div>
-								<div class="dropdown-item">
-									<a href="">Figma</a>
-								</div>
-								<div class="dropdown-item">
-									<a href="">Figma</a>
-								</div>
+								</c:forEach>
+								
 							</div>
 							</div>
 							

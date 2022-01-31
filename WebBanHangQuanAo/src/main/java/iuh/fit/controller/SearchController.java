@@ -1,14 +1,17 @@
 package iuh.fit.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.hql.ast.origin.hql.resolve.GeneratedHQLResolver.intermediateIndexOperation_return;
 
@@ -47,6 +50,20 @@ public class SearchController extends HttpServlet{
 		req.setAttribute("endpage", endpage);
 		req.setAttribute("tag", index);
 		req.setAttribute("tenS", ten);
+		
+		
+		HttpSession session = req.getSession();
+		List<String> items = (List<String>) session.getAttribute("history");
+		if (items == null) {
+			items = new ArrayList<String>();
+			session.setAttribute("history", items);
+		}
+		// getParameter tra ve String (todo-demo.jsp?theItem=? thi add ?)
+		String theItem = req.getParameter("txt");
+		if (theItem != null) {
+			items.add(theItem);
+		}
+		
 		req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
 	}
 }
