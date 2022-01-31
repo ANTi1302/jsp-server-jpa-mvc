@@ -59,7 +59,12 @@
                 <ul>
                     <li  class="active"><a href="<c:url value="/home" />">Home</a></li>
                     <li><a href="<c:url value="/shop" />">Shop</a></li>
-                    <li><a href="<c:url value="/template/view/login.jsp" />">Login</a></li>
+                    <c:if test="${sessionScope.acc == null}">
+                     <li><a href="<c:url value="/template/view/login.jsp" />">Login</a></li>
+                    </c:if>
+                    <c:if test="${sessionScope.acc != null}">
+                     <li><a href="<c:url value="#" />">Logout</a></li>
+                    </c:if>
                     <li><a href="<c:url value="/print" />">Cart</a></li>
                     <li><a href="<c:url value="/template/view/checkout.jsp" />">Checkout</a></li>
                 </ul>

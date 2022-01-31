@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import iuh.fit.facade.ProductFacade;
 import iuh.fit.facade.UsersFacade;
@@ -46,6 +47,8 @@ public class LoginController extends HttpServlet{
 		if (users==null) {
 			req.getRequestDispatcher("/template/view/login.jsp").forward(req, resp);
 		}else {
+			HttpSession session= req.getSession();
+			session.setAttribute("acc", users);
 			resp.sendRedirect("home");
 		}
 	}
