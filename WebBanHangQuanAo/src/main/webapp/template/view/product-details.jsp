@@ -37,8 +37,8 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mt-50">
-                                <li class="breadcrumb-item"><a href="home">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Furniture</a></li>
+                                <li class="breadcrumb-item"><a href="/WebBanHangQuanAo/home">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/WebBanHangQuanAo/shop">Shop</a></li>
                                 <li class="breadcrumb-item"><a href="caterogy?txtC=${dsProductChiTiet.categoryID.catogoryID}">${dsProductChiTiet.categoryID.catogoryName}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">${dsProductChiTiet.productName}</li>
                             </ol>

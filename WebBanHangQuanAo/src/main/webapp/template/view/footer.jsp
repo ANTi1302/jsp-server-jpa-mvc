@@ -34,7 +34,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="<c:url value="/template/view/index.jsp" />"><img src="<c:url value="/template/img/core-img/logo2.png" />" alt=""></a>
+                            <a href="<c:url value="/home" />"><img src="<c:url value="/template/img/core-img/logo2.png" />" alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -52,16 +52,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="<c:url value="/template/view/cart.jsp" />">Home</a>
+                                            <a class="nav-link" href="<c:url value="/home" />">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<c:url value="/template/view/shop.jsp" />">Shop</a>
+                                            <a class="nav-link" href="<c:url value="/shop" />">Shop</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<c:url value="/template/view/product-details.jsp" />">Product</a>
+                                            <a class="nav-link" href="<c:url value="/login" />">Login</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="<c:url value="/template/view/cart.jsp" />">Cart</a>
+                                            <a class="nav-link" href="<c:url value="/print" />">Cart</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="<c:url value="/template/view/checkout.jsp" />">Checkout</a>
