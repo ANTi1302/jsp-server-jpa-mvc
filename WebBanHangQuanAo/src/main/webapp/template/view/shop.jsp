@@ -244,7 +244,8 @@
     <script src="<c:url value="/template/js/plugins.js" />"></script>
     <!-- Active js -->
     <script src="<c:url value="/template/js/active.js" />"></script>
-
+    <script src="<c:url value="/template/js/script.js" />"></script> 
+     <script src="<c:url value="/template/js/suggestions.js" />"></script> 
 
 </body>
 

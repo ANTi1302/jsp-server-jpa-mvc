@@ -19,6 +19,7 @@
     <!-- Core Style CSS -->
  	<link rel="stylesheet" href="<c:url value="/template/css/font-awesome.min.css" />" >
     <link rel="stylesheet" href="<c:url value="/template/css/core-style.css" /> ">
+    
 </head>
 
 <body>
@@ -71,6 +72,8 @@
     <script src="<c:url value="/template/js/plugins.js" />"></script>
     <!-- Active js -->
     <script src="<c:url value="/template/js/active.js" />"></script>
+    <script src="<c:url value="/template/js/script.js" />"></script> 
+     <script src="<c:url value="/template/js/suggestions.js" />"></script> 
 
 </body>
 
