@@ -52,14 +52,14 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="<c:url value="home" />"><img src="<c:url value="/template/img/core-img/logo.png" />" alt=""></a>
+                <a href="<c:url value="/home" />"><img src="<c:url value="/template/img/core-img/logo.png" />" alt=""></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li  class="active"><a href="<c:url value="home" />">Home</a></li>
+                    <li  class="active"><a href="<c:url value="/home" />">Home</a></li>
                     <li><a href="<c:url value="shop" />">Shop</a></li>
-                    <li><a href="<c:url value="" />">Product</a></li>
+                    <li><a href="<c:url value="/template/view/login.jsp" />">Login</a></li>
                     <li><a href="<c:url value="print" />">Cart</a></li>
                     <li><a href="<c:url value="/template/view/checkout.jsp" />">Checkout</a></li>
                 </ul>
