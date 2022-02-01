@@ -50,7 +50,7 @@
 								<div class="icon">
 									<i class="fas fa-search"></i>
 								</div>
-								<div class="dropdown-list">
+								<div class="dropdown-list" id="overflowTest">
 									<c:forEach items="history">
 										<!-- 								<div class="dropdown-item">					 -->
 										<%-- 									<a href="">${theItem}</a> --%>
@@ -67,6 +67,8 @@
 										if (theItem != null) {
 											items.add(theItem);
 										}
+										%>
+										<%
 										for (String temp : items)
 											out.println("<div class='dropdown-item'><a href='search?txt="+temp+"'>	" + temp + "</a></div>");
 										%>
