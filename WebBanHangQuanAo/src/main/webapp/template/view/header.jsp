@@ -68,7 +68,7 @@
 											items.add(theItem);
 										}
 										for (String temp : items)
-											out.println("<div class='dropdown-item'><a href=''>	" + temp + "</a></div>");
+											out.println("<div class='dropdown-item'><a href='search?txt="+temp+"'>	" + temp + "</a></div>");
 										%>
 									</c:forEach>
 
