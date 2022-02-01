@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="iuh.fit.controller.SearchController"%>
+<%@page import="java.util.List"%>
 <%@page pageEncoding="UTF-8"%>
 <link rel="stylesheet"
 	href="<c:url value="/template/css/position.css" />">
@@ -48,15 +51,29 @@
 									<i class="fas fa-search"></i>
 								</div>
 								<div class="dropdown-list">
-								<c:forEach items="sessionScope.history">
-								<div class="dropdown-item">
-									<a href="">${sessionScope.history}</a>
+									<c:forEach items="history">
+										<!-- 								<div class="dropdown-item">					 -->
+										<%-- 									<a href="">${theItem}</a> --%>
+										<!-- 								</div> -->
+
+										<%
+										List<String> items = (List<String>) request.getSession().getAttribute("history");
+										if (items == null) {
+											items = new ArrayList<String>();
+											request.getSession().setAttribute("history", items);
+										}
+										// getParameter tra ve String (todo-demo.jsp?theItem=? thi add ?)
+										String theItem = request.getParameter("txt");
+										if (theItem != null) {
+											items.add(theItem);
+										}
+										for (String temp : items)
+											out.println("<div class='dropdown-item'><a href=''>	" + temp + "</a></div>");
+										%>
+									</c:forEach>
+
 								</div>
-								</c:forEach>
-								
 							</div>
-							</div>
-							
 					</div>
 					</form>
 				</div>

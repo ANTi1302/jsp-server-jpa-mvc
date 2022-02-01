@@ -52,18 +52,18 @@ public class SearchController extends HttpServlet{
 		req.setAttribute("tenS", ten);
 		
 		
-		HttpSession session = req.getSession();
-		List<String> items = (List<String>) session.getAttribute("history");
-		if (items == null) {
-			items = new ArrayList<String>();
-			session.setAttribute("history", items);
-		}
-		// getParameter tra ve String (todo-demo.jsp?theItem=? thi add ?)
-		String theItem = req.getParameter("txt");
-		if (theItem != null) {
-			items.add(theItem);
-		}
-		
+//		HttpSession session = req.getSession();
+//		List<String> items = (List<String>) req.getSession().getAttribute("history");
+//		if (items == null) {
+//			items = new ArrayList<String>();
+//			 req.getSession().setAttribute("history", items);
+//		}
+//		// getParameter tra ve String (todo-demo.jsp?theItem=? thi add ?)
+//		String theItem = req.getParameter("txt");
+//		if (theItem != null) {
+//			items.add(theItem);
+//		}
+//		System.out.println(theItem);
 		req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
 	}
 }
