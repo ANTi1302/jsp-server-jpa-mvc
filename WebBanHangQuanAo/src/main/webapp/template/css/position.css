@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 button {
     cursor: pointer;
-    overflow: scroll;
+/*     overflow: scroll; */
 }
 
 .dropdown {
@@ -42,6 +42,7 @@ button {
     visibility: hidden;
     transition: all 0.2s ease;
     transform: translateY(10px);
+/*     overflow: scroll; */
     
 /*     background-color: tomato; */
   
@@ -70,10 +71,7 @@ button {
     /* transition:     background-color
     0.2s linear; */
 }
-.dropdown-list{
-	
-overflow: scroll;
-}
+
 .search-txt:focus ~.dropdown-list{
 
     display: block;
@@ -153,11 +151,10 @@ overflow: scroll;
   cursor: pointer;
 }
 .dropdown-list#overflowTest {
-  background: #4CAF50;
+  background: white;
   color: white;
   padding: 15px;
-  width: 50%;
-  height: 100px;
-  overflow: scroll;
+ overflow: scroll;
+  height: 100%;
   border: 1px solid #ccc;
 }
