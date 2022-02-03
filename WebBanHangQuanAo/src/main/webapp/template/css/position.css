@@ -150,11 +150,15 @@ button {
   color: #FBB710;
   cursor: pointer;
 }
-.dropdown-list#overflowTest {
+.dropdown-list {
   background: white;
   color: white;
   padding: 15px;
- overflow: scroll;
-  height: 100%;
   border: 1px solid #ccc;
+  overflow: scroll;
+    height: 100px;
+}
+.dropdown-list{
+	overflow: scroll;
+	 height: 100px;
 }

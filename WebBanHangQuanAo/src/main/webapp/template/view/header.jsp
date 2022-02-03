@@ -50,7 +50,7 @@
 								<div class="icon">
 									<i class="fas fa-search"></i>
 								</div>
-								<div class="dropdown-list" id="overflowTest">
+								<div class="dropdown-list">
 									<c:forEach items="history">
 										<!-- 								<div class="dropdown-item">					 -->
 										<%-- 									<a href="">${theItem}</a> --%>
