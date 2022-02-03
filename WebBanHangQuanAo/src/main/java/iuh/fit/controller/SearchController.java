@@ -64,6 +64,6 @@ public class SearchController extends HttpServlet{
 //			items.add(theItem);
 //		}
 //		System.out.println(theItem);
-		req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
+		req.getRequestDispatcher("/template/view/custumer/shop.jsp").forward(req, resp);
 	}
 }

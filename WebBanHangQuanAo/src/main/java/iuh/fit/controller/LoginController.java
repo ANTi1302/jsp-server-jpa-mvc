@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet{
 		UsersFacade productFacade= new UserImpl();
 		Users users=productFacade.timKiemUser(ten, pass);
 		if (users==null) {
-			req.getRequestDispatcher("/template/view/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
 		}else {
 			req.getRequestDispatcher("home").forward(req, resp);
 		}
@@ -45,7 +45,7 @@ public class LoginController extends HttpServlet{
 		UsersFacade productFacade= new UserImpl();
 		Users users=productFacade.timKiemUser(ten, pass);
 		if (users==null) {
-			req.getRequestDispatcher("/template/view/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
 		}else {
 			HttpSession session= req.getSession();
 			session.setAttribute("acc", users);

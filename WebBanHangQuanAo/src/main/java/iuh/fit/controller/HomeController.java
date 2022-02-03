@@ -34,7 +34,7 @@ public class HomeController extends HttpServlet{
 		
 		req.setAttribute("listProduct", list);
 //		req.setAttribute("tuade", c);
-		req.getRequestDispatcher("/template/view/index.jsp").forward(req, resp);
+		req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
 	}
 	
 	@Override

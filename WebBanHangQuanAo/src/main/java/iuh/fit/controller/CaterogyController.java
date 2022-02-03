@@ -46,6 +46,6 @@ public class CaterogyController extends HttpServlet{
 	req.setAttribute("endpage", endpageC);
 	req.setAttribute("tag", indexC);
 	req.setAttribute("tenC", tenC);
-	req.getRequestDispatcher("/template/view/shop.jsp").forward(req, resp);
+	req.getRequestDispatcher("/template/view/custumer/shop.jsp").forward(req, resp);
 	}
 }

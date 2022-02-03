@@ -35,6 +35,6 @@ public class ProductDetailController extends HttpServlet {
 
 		
 		
-		req.getRequestDispatcher("/template/view/product-details.jsp").forward(req, resp);
+		req.getRequestDispatcher("/template/view/custumer/product-details.jsp").forward(req, resp);
 	}
 }

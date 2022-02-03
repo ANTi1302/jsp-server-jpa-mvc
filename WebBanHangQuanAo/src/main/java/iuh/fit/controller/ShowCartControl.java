@@ -66,7 +66,7 @@ public class ShowCartControl extends HttpServlet {
 	        request.setAttribute("total", total);
 	        request.setAttribute("vat", 0.1 * total);
 	        request.setAttribute("sum", 1.1 * total);
-	        request.getRequestDispatcher("/template/view/cart.jsp").forward(request, response);
+	        request.getRequestDispatcher("/template/view/custumer/cart.jsp").forward(request, response);
     }
 	
 	
