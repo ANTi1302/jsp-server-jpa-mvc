@@ -123,6 +123,7 @@ button {
 }
 
 .autocom-box li{
+cursor: pointer;
   list-style: none;
   padding: 8px 12px;
   display: none;
