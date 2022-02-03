@@ -155,11 +155,11 @@ button {
   color: white;
   padding: 15px;
   border: 1px solid #ccc;
-  overflow: scroll;
+  overflow: auto;
     height: 100px;
 }
 .dropdown-list{
-	overflow: scroll;
+	overflow: auto;
 	 height: 100px;
 }
 #style-1::-webkit-scrollbar-track
@@ -170,7 +170,7 @@ button {
 }
 #style-1::-webkit-scrollbar
 {
-	width: 12px;
+	width: 0;
 	background-color: #F5F5F5;
 }
 
