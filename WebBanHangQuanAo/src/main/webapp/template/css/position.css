@@ -30,7 +30,7 @@ button {
   } */
 
 .dropdown-list {
-    border: 1px solid #eee;
+    border: 0px solid #eee;
     /* margin-top: 20px; */
     /* display: none; */
     top: 100%;

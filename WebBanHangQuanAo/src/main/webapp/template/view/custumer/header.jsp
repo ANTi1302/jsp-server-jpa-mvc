@@ -47,9 +47,13 @@
 									<li>Chanel</li>
 									<li>Chanel</li>
 								</div>
-								<div class="icon">
-									<i class="fas fa-search"></i>
-								</div>
+<!-- 								<div class="icon"> -->
+<!-- 									<i class="fas fa-search"></i> -->
+<!-- 								</div> -->
+								<button type="submit" class="icon">
+								<img src="<c:url value="/template/img/core-img/search.png" />"
+																alt="?txt=">
+								</button>
 								<div class="dropdown-list" id="style-1">
 									<c:forEach items="history">
 										<!-- 								<div class="dropdown-item">					 -->
