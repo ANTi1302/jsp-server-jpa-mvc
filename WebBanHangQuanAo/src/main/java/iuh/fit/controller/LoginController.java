@@ -27,21 +27,7 @@ public class LoginController extends HttpServlet{
 		resp.setContentType("text/html");
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		String ten=req.getParameter("name");
-		String pass=req.getParameter("pass");
-		UsersFacade productFacade= new UserImpl();
-		Users users=productFacade.timKiemUser(ten, pass);
-		if (users==null) {
-			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
-		}else {
-			req.getRequestDispatcher("home").forward(req, resp);
-		}
-	}
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setContentType("text/html");
-		EntityManager em = HibernateUtil.getInstance().getEntityManager();
-		String ten=req.getParameter("name");
-		String pass=req.getParameter("pass");
+		String pass=req.getParameter("id");
 		UsersFacade productFacade= new UserImpl();
 		Users users=productFacade.timKiemUser(ten, pass);
 		if (users==null) {
@@ -51,5 +37,23 @@ public class LoginController extends HttpServlet{
 			session.setAttribute("acc", users);
 			resp.sendRedirect("home");
 		}
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html");
+		EntityManager em = HibernateUtil.getInstance().getEntityManager();
+		String ten=req.getParameter("name");
+		String pass=(String) req.getParameter("pass");
+		UsersFacade productFacade= new UserImpl();
+		Users users=productFacade.timKiemUserLogin(ten, pass);
+		if (users==null) {
+			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
+		}else {
+			HttpSession session= req.getSession();
+			session.setAttribute("acc", users);
+			resp.sendRedirect("home");
+		}
+		
+		System.out.println(pass);
 	}
 }

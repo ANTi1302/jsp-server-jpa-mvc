@@ -18,7 +18,17 @@ public class UserImpl extends AbstractImpl implements UsersFacade {
 	public Users timKiemUser(String ten, String pass) throws RemoteException {
 		try {
 			return (Users) getSingle("select *from [dbo].[Users]\r\n"
-					+ "where [Username]='"+ten+"' and Password=" +pass, Users.class);
+					+ "where [Username]='"+ten+"' and access_tokenID=" +pass, Users.class);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+	@Override
+	public Users timKiemUserLogin(String ten, String pass) throws RemoteException {
+		try {
+			return (Users) getSingle("select *from [dbo].[Users]where [Username]='"+ten+"' and Password='"+pass+"'", Users.class);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

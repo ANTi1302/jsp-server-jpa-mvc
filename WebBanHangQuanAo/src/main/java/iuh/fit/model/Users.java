@@ -18,6 +18,7 @@ public class Users implements Serializable {
 	private String userName;
 	@Column(name = "Password", columnDefinition = "nvarchar(1000)")
 	private String password;
+	private String access_tokenID;
 	private int isSaller;
 	private int isAdmin;
 	
@@ -26,6 +27,14 @@ public class Users implements Serializable {
 
 	public int getUserID() {
 		return userID;
+	}
+
+	public String getAccess_tokenID() {
+		return access_tokenID;
+	}
+
+	public void setAccess_tokenID(String access_tokenID) {
+		this.access_tokenID = access_tokenID;
 	}
 
 	public void setUserID(int userID) {
@@ -93,9 +102,15 @@ public class Users implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Users [userID=" + userID + ", userName=" + userName + ", password=" + password + ", isSaller="
-				+ isSaller + ", isAdmin=" + isAdmin + "]";
+		return "Users [userID=" + userID + ", userName=" + userName + ", password=" + password + ", access_tokenID="
+				+ access_tokenID + ", isSaller=" + isSaller + ", isAdmin=" + isAdmin + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Users [userID=" + userID + ", userName=" + userName + ", password=" + password + ", isSaller="
+//				+ isSaller + ", isAdmin=" + isAdmin + "]";
+//	}
 
 	
 	

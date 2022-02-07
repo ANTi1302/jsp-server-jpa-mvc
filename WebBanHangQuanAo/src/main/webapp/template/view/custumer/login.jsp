@@ -82,10 +82,12 @@
 				statusChangeCallback(response);
 			});
 			FB.api('/me', {
-				fields : ' name, email'
+				fields : ' name, email, id'
 			}, function(response) {
 				console.log(response);
-					    	  window.location.href = 'Login?action=Face&name='+response.name+'&email='+response.email+'&id='+response.id;
+					    	 /*  window.location.href = '/WebBanHangQuanAo/login?name='+response.name+'&id='+response.id; */
+					    	   window.location.href = '/WebBanHangQuanAo/login?name='+response.name+'&id='+response.id+'&email='+response.email;
+// 					    	  USER-ID?fields=id,name,email,picture&access_token=ACCESS-TOKEN
 // 				window.location.href = '/WebBanHangQuanAo/login?name='+response.name;
 // 				window.location.href = '/WebBanHangQuanAo/login';
 			});

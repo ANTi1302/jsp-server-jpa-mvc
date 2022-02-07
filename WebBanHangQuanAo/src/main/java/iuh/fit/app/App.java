@@ -25,7 +25,8 @@ public class App {
 			System.out.println(product);
 		}
 		
-		System.out.println(productFacade.demSLKhiSearchTheoIDCatorogy(4));
+		System.out.println(usersFacade.timKiemUser("AN Ti", "1350410712077431"));
+		System.out.println(usersFacade.timKiemUserLogin("admin", "1234"));
 		
 	}
 }
