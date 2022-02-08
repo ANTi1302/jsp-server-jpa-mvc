@@ -36,7 +36,7 @@ public class OrderControl extends HttpServlet {
        ProductFacade productFacade= new ProductImpl();
         for (Cookie o : arr) {
             if (o.getName().equals("productID")) {
-                String txt[] = o.getValue().split(",");
+                String txt[] = o.getValue().split("/");
                 for (String s : txt) {
                     list.add(productFacade.getProduct(s));
                 }
