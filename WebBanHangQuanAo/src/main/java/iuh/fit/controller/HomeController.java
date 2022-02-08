@@ -19,7 +19,7 @@ import iuh.fit.until.HibernateUtil;
 public class HomeController extends HttpServlet{
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {		
 		//thiec lap tieng viet
 		resp.setContentType("text/html");
 		req.setCharacterEncoding("UTF-8");
