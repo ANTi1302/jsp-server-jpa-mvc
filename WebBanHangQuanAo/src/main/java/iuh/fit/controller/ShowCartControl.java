@@ -40,8 +40,8 @@ public class ShowCartControl extends HttpServlet {
 	        List<Product> list = new ArrayList<>();
 	        ProductFacade dao = new ProductImpl();
 	        for (Cookie o : arr) {
-	            if (o.getName().equals("id")) {
-	                String txt[] = o.getValue().split(",");
+	            if (o.getName().equals("productID")) {
+	                String txt[] = o.getValue().split("/");
 	                for (String s : txt) {
 	                    list.add(dao.getProduct(s));
 	                }

@@ -23,8 +23,8 @@ public class CartController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF8");
-		Cookie arr[] = req.getCookies();
 		String id = req.getParameter("id");
+		Cookie arr[] = req.getCookies();
 		String txt = "";
 		for (Cookie o : arr) {
 			if (o.getName().equals("productID")) {
@@ -36,9 +36,9 @@ public class CartController extends HttpServlet {
 		if (txt.isEmpty()) {
             txt = id;
         } else {
-            txt = txt + "," + id;
+            txt = txt + "/" + id;
         }
-		Cookie c = new Cookie("id", txt);
+		Cookie c = new Cookie("productID", txt);
 		c.setMaxAge(60 * 60 * 24);
 		resp.addCookie(c);
 		resp.sendRedirect("print");

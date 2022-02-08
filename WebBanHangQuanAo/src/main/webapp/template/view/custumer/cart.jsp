@@ -86,7 +86,7 @@
                                 <li><span>total:</span> <span>${sum}</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
-                                <a href="<c:url value="/template/view/custumer/cart.jsp" />" class="btn amado-btn w-100">Checkout</a>
+                                <a href="<c:url value="order" />" class="btn amado-btn w-100">Checkout</a>
                             </div>
                         </div>
                     </div>
