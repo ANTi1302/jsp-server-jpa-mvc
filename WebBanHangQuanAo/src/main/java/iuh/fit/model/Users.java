@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -12,6 +14,7 @@ import javax.persistence.OneToMany;
 public class Users implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "UserID")
 	private int userID;
 	@Column(name = "Username", columnDefinition = "nvarchar(500)")
@@ -21,12 +24,20 @@ public class Users implements Serializable {
 	private String access_tokenID;
 	private int isSaller;
 	private int isAdmin;
-	
+	private String email;
 	@OneToMany(mappedBy = "sellerID")
 	private List<Product> products;
 
 	public int getUserID() {
 		return userID;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getAccess_tokenID() {
@@ -91,6 +102,16 @@ public class Users implements Serializable {
 		this.products = products;
 	}
 
+	public Users(String userName, String password, String access_tokenID, int isSaller, int isAdmin, String email) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.access_tokenID = access_tokenID;
+		this.isSaller = 0;
+		this.isAdmin = 0;
+		this.email= email;
+	}
+
 	public Users(int userID) {
 		super();
 		this.userID = userID;
@@ -103,16 +124,7 @@ public class Users implements Serializable {
 	@Override
 	public String toString() {
 		return "Users [userID=" + userID + ", userName=" + userName + ", password=" + password + ", access_tokenID="
-				+ access_tokenID + ", isSaller=" + isSaller + ", isAdmin=" + isAdmin + "]";
+				+ access_tokenID + ", isSaller=" + isSaller + ", isAdmin=" + isAdmin + ", email=" + email + "]";
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Users [userID=" + userID + ", userName=" + userName + ", password=" + password + ", isSaller="
-//				+ isSaller + ", isAdmin=" + isAdmin + "]";
-//	}
-
-	
-	
-	
 }

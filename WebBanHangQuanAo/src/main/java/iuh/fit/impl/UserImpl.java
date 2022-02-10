@@ -35,4 +35,10 @@ public class UserImpl extends AbstractImpl implements UsersFacade {
 		return null;
 	}
 
+	@Override
+	public boolean themUser(Users users) throws RemoteException {
+		// TODO Auto-generated method stub
+		return them(users);
+	}
+
 }

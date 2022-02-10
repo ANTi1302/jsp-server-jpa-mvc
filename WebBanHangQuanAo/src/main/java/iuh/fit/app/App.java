@@ -11,6 +11,7 @@ import iuh.fit.facade.UsersFacade;
 import iuh.fit.impl.ProductImpl;
 import iuh.fit.impl.UserImpl;
 import iuh.fit.model.Product;
+import iuh.fit.model.Users;
 import iuh.fit.until.HibernateUtil;
 
 public class App {
@@ -21,12 +22,19 @@ public class App {
 		ProductFacade productFacade= new ProductImpl();
 		UsersFacade usersFacade=new UserImpl();
 		List<Product> list= productFacade.dsProductTheoIDCatorogyTop6(1,4);
-		for (Product product : list) {
-			System.out.println(product);
-		}
+//		for (Product product : list) {
+//			System.out.println(product);
+//		}
+//		
+		System.out.println(usersFacade.timKiemUser("AN Ti", "123"));
+//		System.out.println(usersFacade.timKiemUserLogin("admin", "1234"));
+//		Users user= new Users("Gia Lam", "123456", null, 0, 0,"gialam@gmail.com");
 		
-		System.out.println(usersFacade.timKiemUser("AN Ti", "1350410712077431"));
-		System.out.println(usersFacade.timKiemUserLogin("admin", "1234"));
+//		if (usersFacade.themUser(user)) {
+//			System.out.println("okkkkkk");
+//		} else {
+//			System.out.println("nooooooo");
+//		}
 		
 	}
 }

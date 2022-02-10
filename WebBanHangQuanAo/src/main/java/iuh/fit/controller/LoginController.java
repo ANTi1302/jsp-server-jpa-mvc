@@ -28,10 +28,15 @@ public class LoginController extends HttpServlet{
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		String ten=req.getParameter("name");
 		String pass=req.getParameter("id");
-		UsersFacade productFacade= new UserImpl();
-		Users users=productFacade.timKiemUser(ten, pass);
+		UsersFacade userImpl= new UserImpl();
+		Users users=userImpl.timKiemUser(ten, pass);
+		Users users2= new Users(ten, null, pass, 0, 0, null);
+	
 		if (users==null) {
-			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
+			userImpl.themUser(users2);
+			HttpSession session= req.getSession();
+			session.setAttribute("acc", users2);
+			resp.sendRedirect("home");
 		}else {
 			HttpSession session= req.getSession();
 			session.setAttribute("acc", users);

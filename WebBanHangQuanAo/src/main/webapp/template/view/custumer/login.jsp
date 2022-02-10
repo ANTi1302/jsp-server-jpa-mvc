@@ -33,7 +33,7 @@
 								method="post">
 								<div class="form-group">
 									<label>Username / Email</label> <input type="text"
-										class="form-control" name="name">
+										class="form-control" name="name" value="${sessionScope.acc.username}">
 								</div>
 								<div class="form-group">
 									<label>Password</label> <input type="password"
@@ -55,7 +55,7 @@
 									</fb:login-button>
 								</ul>
 								<span class="signup-link">Don't have an account? Sign up
-									<a href="">here</a>
+									<a href="register.jsp">here</a>
 								</span>
 								<div id="status"></div>
 							
