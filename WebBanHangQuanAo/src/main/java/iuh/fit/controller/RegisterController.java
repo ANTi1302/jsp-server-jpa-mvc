@@ -1,7 +1,15 @@
 package iuh.fit.controller;
 
 import java.io.IOException;
+import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 import iuh.fit.facade.UsersFacade;
 import iuh.fit.impl.UserImpl;
@@ -32,8 +41,41 @@ public class RegisterController extends HttpServlet{
 			HttpSession session= req.getSession();
 			session.setAttribute("acc", users);
 			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
-		} else {
-
+		}
+		
+		final String usernameMail="noreply.ellenthandmade.com@gmail.com";
+		final String passwordMail="ellenthandmade123";
+		Properties properties= new Properties();
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+		properties.put("mail.smtp.port", "587");
+		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.starttls.enable", "true");
+		Session session= Session.getInstance(properties, new Authenticator() {
+			
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				// TODO Auto-generated method stub
+				return new PasswordAuthentication(usernameMail, passwordMail);
+			}
+		});
+		
+		//dang nhap mail
+		String emailTo= req.getParameter("exampleInputEmail");
+		String emailSubject="Member registration successful!";
+		String content=req.getParameter("exampleFirstName")+" " +req.getParameter("exampleLastName");
+		String emailContent="Thanks you "+content+", Congratulations on becoming a member of Ellent handmade";
+		try {
+			Message message= new MimeMessage(session);
+			message.setFrom(new InternetAddress(usernameMail));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailTo));	
+			message.setSubject(emailSubject);
+			message.setText(emailContent);
+			Transport.send(message);
+			System.out.println("Done");
+		
+		
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 }

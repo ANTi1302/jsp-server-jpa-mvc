@@ -31,9 +31,9 @@ public class Mail
 	}
 
 	private void sendEmail() throws MessagingException {
-		String fromUser = "pqr@gmail.com";  //Enter sender email id
-		String fromUserPassword = "*****";  //Enter sender gmail password , this will be authenticated by gmail smtp server
-		String emailHost = "smtp.gmail.com";
+		String fromUser = "porkoe3443334@gmail.com";  //Enter sender email id
+		String fromUserPassword = "34433344334443anhthu";  //Enter sender gmail password , this will be authenticated by gmail smtp server
+		String emailHost = "smtp.office365.com";
 		Transport transport = newSession.getTransport("smtp");
 		transport.connect(emailHost, fromUser, fromUserPassword);
 		transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());
@@ -42,7 +42,7 @@ public class Mail
 	}
 
 	private MimeMessage draftEmail() throws AddressException, MessagingException, IOException {
-		String[] emailReceipients = {"porkoe3443334@gmail.com"};  //Enter list of email recepients
+		String[] emailReceipients = {"anhthu@gmail.com"};  //Enter list of email recepients
 		String emailSubject = "Test Mail";
 		String emailBody = "Test Body of my email";
 		mimeMessage = new MimeMessage(newSession);
@@ -70,7 +70,7 @@ public class Mail
 
 	private void setupServerProperties() {
 		Properties properties = System.getProperties();
-		properties.put("mail.smtp.port", "547");
+		properties.put("mail.smtp.port", "587");
 		properties.put("mail.smtp.auth", "true");
 		properties.put("mail.smtp.starttls.enable", "true");
 		newSession = Session.getDefaultInstance(properties,null);
