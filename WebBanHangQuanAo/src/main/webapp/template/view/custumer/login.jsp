@@ -48,7 +48,8 @@
 								<a href="" class="forgot">Forgot Password</a> <span
 									class="separator">OR</span>
 								<ul class="social-links">
-									<li><a href="" id="mySignin" onclick="login()"><i class="fab fa-google"></i> Login
+									<li><a href="https://accounts.google.com/o/oauth2/auth?scope=profile&redirect_uri=http://localhost:8080/WebBanHangQuanAo/home&response_type=code
+		   &client_id=705228605852-mro77dumg7js0i3t3lmo80rcbjf0ci2c.apps.googleusercontent.com&approval_prompt=force" onclick="onSignIn()"><i class="fab fa-google"></i> Login
 											with Google</a></li>
 									<fb:login-button scope="public_profile,email"
 										onlogin="checkLoginState();">
@@ -65,7 +66,7 @@
 			</div>
 		</div>
 	</div>
-
+<!-- 				facebook -->
 	<script>
 		function statusChangeCallback(response) {
 			console.log('statusChangeCallback');
@@ -132,7 +133,8 @@
 		}
 	</script>
 	
-	 <script>
+	<!-- 				google -->
+	<script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -142,25 +144,15 @@
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
+	 
 
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
     </script>
- <script type="text/javascript">
-        function login() 
-        {
-          var myParams = {
-            'clientid' : '1058431666102-onqbil7jmmg6nu5kn9j3rcl6kru538da.apps.googleusercontent.com',
-            'cookiepolicy' : 'single_host_origin',
-            'callback' : 'loginCallback',
-            'approvalprompt':'force',
-            'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
-          };
-          gapi.auth.signIn(myParams);
-        }
-
+ 		<script type="text/javascript">
+        
         function loginCallback(result)
         {
             if(result['status']['signed_in'])
@@ -212,6 +204,9 @@
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
              })();
         </script>
+	 
+
+       
 
 </body>
 </html>
