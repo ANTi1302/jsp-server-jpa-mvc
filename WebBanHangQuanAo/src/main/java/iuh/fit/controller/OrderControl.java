@@ -18,9 +18,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import iuh.fit.facade.CartFacade;
 import iuh.fit.facade.ProductFacade;
+import iuh.fit.impl.CartImpl;
 import iuh.fit.impl.ProductImpl;
+import iuh.fit.model.Cart;
 import iuh.fit.model.Product;
+import iuh.fit.model.Users;
 import iuh.fit.until.HibernateUtil;
 
 
@@ -33,7 +37,11 @@ public class OrderControl extends HttpServlet {
         EntityManager em = HibernateUtil.getInstance().getEntityManager();
         Cookie arr[] = request.getCookies();
         List<Product> list = new ArrayList<>();
+        
        ProductFacade productFacade= new ProductImpl();
+       CartFacade cartFacade=new CartImpl();
+       
+       
         for (Cookie o : arr) {
             if (o.getName().equals("productID")) {
                 String txt[] = o.getValue().split("/");
@@ -42,17 +50,37 @@ public class OrderControl extends HttpServlet {
                 }
             }
         }
+        
         for (int i = 0; i < list.size(); i++) {
             int count = 1;
             for (int j = i+1; j < list.size(); j++) {
-                if(list.get(i).getProductID() == list.get(j).getProductID()){
+                if(((Product) list.get(i)).getProductID() == ((Product) list.get(j)).getProductID()){
                     count++;
                     list.remove(j);
                     j--;
-                    list.get(i).setAmount(count);
+                    ((Product) list.get(i)).setAmount(count);
+                   
                 }
+                System.out.println("ProductID: "+list.get(i).getProductID());
+                System.out.println("Amount: "+list.get(i).getAmount());
+                System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
+                
+                
             }
+            System.out.println("ProductID: "+list.get(i).getProductID());
+            System.out.println("Amount: "+list.get(i).getAmount());
+            System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
+            List<Object> cart=new ArrayList<Object>();
+            Product product= new Product(list.get(i).getProductID());
+            Users users= new Users(list.get(i).getSellerID().getUserID());
+            cart.add(new Cart(users, product, list.get(i).getAmount()));
+            cartFacade.addCart(cart);
         }
+        
+//        List<Object> cart= new ArrayList<Object>();
+//        
+//        cart.add(list);
+//        System.out.println(cart);
         for (Cookie o : arr) {
             o.setMaxAge(0);
             response.addCookie(o);
