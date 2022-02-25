@@ -70,7 +70,7 @@ public class OrderControl extends HttpServlet {
             List<Object> cart=new ArrayList<Object>();
             Product product= new Product(list.get(i).getProductID());
             cart.add(new Cart(users, product, list.get(i).getAmount()));
-            
+            //Thêm hóa đơn không cần login
             cartFacade.addCart(cart);
         }
         
