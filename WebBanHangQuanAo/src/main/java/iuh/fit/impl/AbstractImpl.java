@@ -40,7 +40,10 @@ public class AbstractImpl extends UnicastRemoteObject{
 			tr.begin();
 			obj.forEach(obj1 -> {
 				em.persist(obj1);
+				
+				
 			});
+			
 			tr.commit();
 
 			return obj.size();

@@ -50,8 +50,10 @@ public class OrderControl extends HttpServlet {
                 }
             }
         }
-        
+        Users users= new Users();
+//        users= new Users(list.getSellerID().getUserID());
         for (int i = 0; i < list.size(); i++) {
+        	  
             int count = 1;
             for (int j = i+1; j < list.size(); j++) {
                 if(((Product) list.get(i)).getProductID() == ((Product) list.get(j)).getProductID()){
@@ -61,19 +63,14 @@ public class OrderControl extends HttpServlet {
                     ((Product) list.get(i)).setAmount(count);
                    
                 }
-                System.out.println("ProductID: "+list.get(i).getProductID());
-                System.out.println("Amount: "+list.get(i).getAmount());
-                System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
-                
-                
             }
             System.out.println("ProductID: "+list.get(i).getProductID());
             System.out.println("Amount: "+list.get(i).getAmount());
             System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
             List<Object> cart=new ArrayList<Object>();
             Product product= new Product(list.get(i).getProductID());
-            Users users= new Users(list.get(i).getSellerID().getUserID());
             cart.add(new Cart(users, product, list.get(i).getAmount()));
+            
             cartFacade.addCart(cart);
         }
         

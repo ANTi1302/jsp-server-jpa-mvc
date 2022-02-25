@@ -19,12 +19,13 @@ public class Cart implements Serializable {
 	
 	
 	private int amount;
-	@Id
+	
 	@ManyToOne
+	//Tu dong them id ảo cho phần update, delete
 	@Cascade(value= {org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.ALL})
 	@JoinColumn(name = "UserID")
 	private Users usersID;
-
+	@Id
 	@ManyToOne
 	@JoinColumn(name = "ProductID")
 	private Product productsID;
