@@ -19,4 +19,5 @@ public interface ProductFacade extends Remote{
 	public Product getProduct(String txt)throws RemoteException;
 	public List<Product> dsProductTheoIDCatorogyTop6(int index, int ten) throws RemoteException;
 	public int demSLKhiSearchTheoIDCatorogy(int ten) throws RemoteException;
+	public boolean capNhatProduct(int product)throws RemoteException;
 }

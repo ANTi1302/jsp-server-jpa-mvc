@@ -14,7 +14,7 @@ public class CartImpl extends AbstractImpl implements CartFacade{
 	}
 
 	@Override
-	public long addCart(List<Object> cart) throws RemoteException {
+	public boolean addCart(List<Object> cart) throws RemoteException {
 		// TODO Auto-generated method stub
 		return them(cart);
 	}

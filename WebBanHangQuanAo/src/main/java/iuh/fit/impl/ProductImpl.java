@@ -193,6 +193,42 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 		return 0;
 	}
 
+//	UPDATE [dbo].[Product]
+//			SET [dbo].[Product].amount = [dbo].[Cart].amount-[dbo].[Product].amount
+//			FROM [dbo].[Product],[dbo].[Cart]
+//			WHERE [dbo].[Product].ProductID=[dbo].[Cart].ProductID
+//			and [dbo].[Product].ProductID = '1';
+	@Override
+	public boolean capNhatProduct(int product) throws RemoteException {
+		
+//			List<Product> list = em.createNativeQuery("UPDATE [dbo].[Product]\n"
+//					+ "SET [dbo].[Product].amount = [dbo].[Cart].amount-[dbo].[Product].amount\n"
+//					+ "FROM [dbo].[Product],[dbo].[Cart]\n"
+//					+ "WHERE [dbo].[Product].ProductID=[dbo].[Cart].ProductID\n"
+//					+ "and [dbo].[Product].ProductID = "+product+";", Product.class).getResultList();
+//	
+//			return capNhat(list);
+		EntityTransaction tr = em.getTransaction();		
+		try {
+			tr.begin();
+		String query = "\n"
+				+ "UPDATE [dbo].[Product]\n"
+				+ "SET [dbo].[Product].amount =[dbo].[Product].amount-[dbo].[Cart].amount\n"
+				+ "FROM [dbo].[Product],[dbo].[Cart]\n"
+				+ "WHERE [dbo].[Product].ProductID=[dbo].[Cart].ProductID\n"
+				+ "and [dbo].[Product].ProductID ="+product;
+
+		 em.createNativeQuery(query).executeUpdate();
+		tr.commit();
+		return  true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			tr.rollback();
+		}
+		return false;
+		
+	}
+
 	
 	
 

@@ -69,9 +69,16 @@ public class OrderControl extends HttpServlet {
             System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
             List<Object> cart=new ArrayList<Object>();
             Product product= new Product(list.get(i).getProductID());
+            int ma=product.getProductID();
             cart.add(new Cart(users, product, list.get(i).getAmount()));
             //Thêm hóa đơn không cần login
-            cartFacade.addCart(cart);
+            if (cartFacade.addCart(cart)) {
+            	productFacade.capNhatProduct(ma);
+            	System.out.println("đã cập nhật");
+			}else {
+				System.out.println("lỗi cập nhật");
+			}
+            
         }
         
 //        List<Object> cart= new ArrayList<Object>();

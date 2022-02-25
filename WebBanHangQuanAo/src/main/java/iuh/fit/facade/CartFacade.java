@@ -8,5 +8,6 @@ import iuh.fit.model.Cart;
 
 public interface CartFacade extends Remote{
 
-	public long addCart(List<Object> cart) throws RemoteException;
+	public boolean addCart(List<Object> cart) throws RemoteException;
+	
 }

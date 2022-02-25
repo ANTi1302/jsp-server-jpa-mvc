@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.hibernate.hql.ast.origin.hql.resolve.GeneratedHQLResolver.intermediateIndexOperation_return;
+
 import iuh.fit.facade.CartFacade;
 import iuh.fit.facade.ProductFacade;
 import iuh.fit.facade.UsersFacade;
@@ -39,20 +41,32 @@ public class App {
 		
 
 		Product product= new Product(2);
+		int ma=product.getProductID();
 		Product product02= new Product(3);
 		Product product03= new Product(5);
 		Product product04= new Product(7);
-		//		if (usersFacade.themUser(user)) {
+//				if (usersFacade.themUser(user)) {
 //			System.out.println("okkkkkk");
 //		} else {
 //			System.out.println("nooooooo");
 //		}
 		List<Object> cart= new ArrayList<Object>();
-//		cart.add(new Cart(user02, product, 6));
-		cart.add(new Cart(user, product02, 1));
+		cart.add(new Cart(user, product, 6));
+		if (cartFacade.addCart(cart)) {
+			if (productFacade.capNhatProduct(ma)) {
+				System.out.println("đã cập nhật");
+			}
+			else {
+				System.out.println("lỗi cập nhật");
+			}
+			
+		}else {
+			System.out.println("noooo");
+		}
+		
 	
 		
-		cartFacade.addCart(cart);
+		
 		
 	}
 }

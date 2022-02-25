@@ -34,7 +34,7 @@ public class AbstractImpl extends UnicastRemoteObject{
 
 		return false;
 	}
-	public long them(List<Object> obj) throws RemoteException  {
+	public boolean them(List<Object> obj) throws RemoteException  {
 		EntityTransaction tr = em.getTransaction();
 		try {
 			tr.begin();
@@ -46,14 +46,14 @@ public class AbstractImpl extends UnicastRemoteObject{
 			
 			tr.commit();
 
-			return obj.size();
+			return true;
 		}catch (Exception e) {
 			e.printStackTrace();
 			tr.rollback();
 			
 		}
 
-		return 0;
+		return false;
 	}
 	public boolean capNhat(Object obj) throws RemoteException  {
 		EntityTransaction tr = em.getTransaction();
