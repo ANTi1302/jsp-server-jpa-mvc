@@ -12,9 +12,9 @@ inputBox.onkeyup = (e)=>{
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            webLink = `http://localhost:8080/WebBanHangQuanAo/search?txt=${userData}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
+//            webLink = `http://localhost:8080/WebBanHangQuanAo/search?txt=${userData}`;
+//            linkTag.setAttribute("href", webLink);
+//            linkTag.click();
         }
         emptyArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
@@ -41,8 +41,8 @@ function select(element){
     inputBox.value = selectData;
     icon.onclick = ()=>{
         webLink = `http://localhost:8080/WebBanHangQuanAo/search?txt=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
+//        linkTag.setAttribute("href", webLink);
+//        linkTag.click();
     }
     searchWrapper.classList.remove("active");
 }
