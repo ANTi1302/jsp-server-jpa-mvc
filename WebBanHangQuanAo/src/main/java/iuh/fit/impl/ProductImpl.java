@@ -201,13 +201,6 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 	@Override
 	public boolean capNhatProduct(int product) throws RemoteException {
 		
-//			List<Product> list = em.createNativeQuery("UPDATE [dbo].[Product]\n"
-//					+ "SET [dbo].[Product].amount = [dbo].[Cart].amount-[dbo].[Product].amount\n"
-//					+ "FROM [dbo].[Product],[dbo].[Cart]\n"
-//					+ "WHERE [dbo].[Product].ProductID=[dbo].[Cart].ProductID\n"
-//					+ "and [dbo].[Product].ProductID = "+product+";", Product.class).getResultList();
-//	
-//			return capNhat(list);
 		EntityTransaction tr = em.getTransaction();		
 		try {
 			tr.begin();
