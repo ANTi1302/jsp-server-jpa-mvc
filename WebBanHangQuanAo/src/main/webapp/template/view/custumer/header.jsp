@@ -144,7 +144,7 @@
 		<div class="cart-fav-search mb-100">
 			<a href="<c:url value="/print" />" class="cart-nav"><img
 				src="<c:url value="/template/img/core-img/cart.png" />" alt="">
-				Cart <span>(0)</span></a> <a href="#" class="fav-nav"><img
+				Cart <span>(${soLuong})</span></a> <a href="#" class="fav-nav"><img
 				src="<c:url value="/template/img/core-img/favorites.png" />" alt="">
 				Favourite</a> <a href="#" class="search-nav"><img
 				src="<c:url value="/template/img/core-img/search.png" />" alt="">

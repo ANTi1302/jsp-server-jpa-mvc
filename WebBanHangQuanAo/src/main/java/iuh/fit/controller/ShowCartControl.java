@@ -47,6 +47,7 @@ public class ShowCartControl extends HttpServlet {
 	                }
 	            }
 	        }
+	        int soLuong=0;
 	        for (int i = 0; i < list.size(); i++) {
 	            int count = 1;
 	            for (int j = i+1; j < list.size(); j++) {
@@ -57,7 +58,9 @@ public class ShowCartControl extends HttpServlet {
 	                    list.get(i).setAmount(count);
 	                }
 	            }
+	            soLuong++;
 	        }
+	        
 	        double total = 0;
 	        for (Product o : list) {
 	            total = total + o.getAmount() * o.getPrice();
@@ -66,7 +69,9 @@ public class ShowCartControl extends HttpServlet {
 	        request.setAttribute("total", total);
 	        request.setAttribute("vat", 0.1 * total);
 	        request.setAttribute("sum", 1.1 * total);
+	        request.setAttribute("soLuong", soLuong);
 	        request.getRequestDispatcher("/template/view/custumer/cart.jsp").forward(request, response);
+	        
     }
 	
 	
