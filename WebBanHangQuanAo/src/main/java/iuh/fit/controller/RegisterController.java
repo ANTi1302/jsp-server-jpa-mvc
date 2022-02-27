@@ -1,14 +1,17 @@
 package iuh.fit.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -42,6 +45,13 @@ public class RegisterController extends HttpServlet{
 			session.setAttribute("acc", users);
 			req.getRequestDispatcher("/template/view/custumer/login.jsp").forward(req, resp);
 		}
+//		MimeBodyPart attachment= new MimeBodyPart();
+//		try {
+//			attachment.attachFile(new File("images/image-4.jpeg"));
+//		} catch (IOException | MessagingException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		
 		final String usernameMail="noreply.ellenthandmade.com@gmail.com";
 		final String passwordMail="ellenthandmade123";
@@ -251,7 +261,7 @@ public class RegisterController extends HttpServlet{
 				+ "  <tr>\r\n"
 				+ "    <td class=\"v-text-align\" style=\"padding-right: 0px;padding-left: 0px;\" align=\"center\">\r\n"
 				+ "      \r\n"
-				+ "      <img align=\"center\" border=\"0\" src=\"images/image-4.jpeg\" alt=\"Wrong Email\" title=\"Wrong Email\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 530px;\" width=\"530\" class=\"v-src-width v-src-max-width\"/>\r\n"
+				+ "      <img align=\"center\" border=\"0\" src=\"https://i.pinimg.com/564x/c8/e4/7d/c8e47d9dc35e300778dc76ac00fbbfb2.jpg\" alt=\"Wrong Email\" title=\"Wrong Email\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 530px;\" width=\"530\" class=\"v-src-width v-src-max-width\"/>\r\n"
 				+ "      \r\n"
 				+ "    </td>\r\n"
 				+ "  </tr>\r\n"
@@ -285,8 +295,8 @@ public class RegisterController extends HttpServlet{
 				+ "      <td class=\"v-container-padding-padding\" style=\"overflow-wrap:break-word;word-break:break-word;padding:10px 40px;font-family:arial,helvetica,sans-serif;\" align=\"left\">\r\n"
 				+ "        \r\n"
 				+ "<div class=\"v-text-align\" align=\"left\">\r\n"
-				+ "  <!--[if mso]><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;\"><tr><td class=\"v-text-align\" style=\"font-family:arial,helvetica,sans-serif;\" align=\"left\"><v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"https://unlayer.com\" style=\"height:47px; v-text-anchor:middle; width:456px;\" arcsize=\"6.5%\" strokecolor=\"#ced4d9\" strokeweight=\"3px\" fillcolor=\"#91a5e2\"><w:anchorlock/><center style=\"color:#000000;font-family:arial,helvetica,sans-serif;\"><![endif]-->\r\n"
-				+ "    <a href=\"https://unlayer.com\" target=\"_blank\" class=\"v-size-width\" style=\"box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #000000; background-color: #91a5e2; border-radius: 3px;-webkit-border-radius: 3px; -moz-border-radius: 3px; width:100%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-color: #ced4d9; border-top-style: solid; border-top-width: 3px; border-left-color: #ced4d9; border-left-style: solid; border-left-width: 3px; border-right-color: #ced4d9; border-right-style: solid; border-right-width: 3px; border-bottom-color: #ced4d9; border-bottom-style: solid; border-bottom-width: 3px;\">\r\n"
+				+ "  <!--[if mso]><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;\"><tr><td class=\"v-text-align\" style=\"font-family:arial,helvetica,sans-serif;\" align=\"left\"><v:roundrect xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" href=\"http://localhost:8080/WebBanHangQuanAo/home\" style=\"height:47px; v-text-anchor:middle; width:456px;\" arcsize=\"6.5%\" strokecolor=\"#ced4d9\" strokeweight=\"3px\" fillcolor=\"#91a5e2\"><w:anchorlock/><center style=\"color:#000000;font-family:arial,helvetica,sans-serif;\"><![endif]-->\r\n"
+				+ "    <a href=\"http://localhost:8080/WebBanHangQuanAo/home\" target=\"_blank\" class=\"v-size-width\" style=\"box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #000000; background-color: #91a5e2; border-radius: 3px;-webkit-border-radius: 3px; -moz-border-radius: 3px; width:100%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;border-top-color: #ced4d9; border-top-style: solid; border-top-width: 3px; border-left-color: #ced4d9; border-left-style: solid; border-left-width: 3px; border-right-color: #ced4d9; border-right-style: solid; border-right-width: 3px; border-bottom-color: #ced4d9; border-bottom-style: solid; border-bottom-width: 3px;\">\r\n"
 				+ "      <span class=\"v-padding\" style=\"display:block;padding:15px 40px;line-height:120%;\"><span style=\"font-size: 14px; line-height: 16.8px;\">C L I C K&nbsp; &nbsp;H E R E</span></span>\r\n"
 				+ "    </a>\r\n"
 				+ "  <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->\r\n"
@@ -348,7 +358,7 @@ public class RegisterController extends HttpServlet{
 				+ "    <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 25px\">\r\n"
 				+ "      <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\r\n"
 				+ "        <a href=\"https://facebook.com/\" title=\"Facebook\" target=\"_blank\">\r\n"
-				+ "          <img src=\"images/image-3.png\" alt=\"Facebook\" title=\"Facebook\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
+				+ "          <img src=\"https://i.pinimg.com/564x/df/d9/f4/dfd9f4969e92f30198cbfd8f5ecc127f.jpg\" alt=\"Facebook\" title=\"Facebook\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
 				+ "        </a>\r\n"
 				+ "      </td></tr>\r\n"
 				+ "    </tbody></table>\r\n"
@@ -358,7 +368,7 @@ public class RegisterController extends HttpServlet{
 				+ "    <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 25px\">\r\n"
 				+ "      <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\r\n"
 				+ "        <a href=\"https://twitter.com/\" title=\"Twitter\" target=\"_blank\">\r\n"
-				+ "          <img src=\"images/image-1.png\" alt=\"Twitter\" title=\"Twitter\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
+				+ "          <img src=\"https://i.pinimg.com/564x/a6/d5/55/a6d555266824307026e70706659ff785.jpg\" alt=\"Twitter\" title=\"Twitter\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
 				+ "        </a>\r\n"
 				+ "      </td></tr>\r\n"
 				+ "    </tbody></table>\r\n"
@@ -368,7 +378,7 @@ public class RegisterController extends HttpServlet{
 				+ "    <table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"32\" height=\"32\" style=\"border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px\">\r\n"
 				+ "      <tbody><tr style=\"vertical-align: top\"><td align=\"left\" valign=\"middle\" style=\"word-break: break-word;border-collapse: collapse !important;vertical-align: top\">\r\n"
 				+ "        <a href=\"https://linkedin.com/\" title=\"LinkedIn\" target=\"_blank\">\r\n"
-				+ "          <img src=\"images/image-2.png\" alt=\"LinkedIn\" title=\"LinkedIn\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
+				+ "          <img src=\"https://i.pinimg.com/564x/2b/e7/ce/2be7cee4fe404b8fa86d31d139fab757.jpg\" alt=\"LinkedIn\" title=\"LinkedIn\" width=\"32\" style=\"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important\">\r\n"
 				+ "        </a>\r\n"
 				+ "      </td></tr>\r\n"
 				+ "    </tbody></table>\r\n"
