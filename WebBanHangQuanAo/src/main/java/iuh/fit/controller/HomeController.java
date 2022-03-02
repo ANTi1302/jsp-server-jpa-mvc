@@ -69,7 +69,8 @@ public class HomeController extends HttpServlet{
 	        }
 	        
 	        ////
-	     
+	        HttpSession session = req.getSession();
+            Users username =  (Users) session.getAttribute("acc"); 
 	  
 	    req.setAttribute("soLuong", soLuong);
 		req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);

@@ -76,7 +76,7 @@ public class OrderControl extends HttpServlet {
             //Thêm hóa đơn không cần login
             HttpSession session = request.getSession();
             Users username =  (Users) session.getAttribute("acc");
-            System.out.println(username.getUsername());
+//            System.out.println(username.getUsername());
             cartacc.add(new Cart(username, product, list.get(i).getAmount()));
             if (username != null) {
     			cartFacade.addCart(cartacc);
@@ -103,6 +103,7 @@ public class OrderControl extends HttpServlet {
 		
         
         response.sendRedirect("home");
+//        request.getRequestDispatcher("/template/view/custumer/index.jsp").forward(request, response);
         
     }
 
