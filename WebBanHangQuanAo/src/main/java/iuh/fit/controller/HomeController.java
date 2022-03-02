@@ -12,10 +12,14 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import iuh.fit.facade.ProductFacade;
+import iuh.fit.facade.UsersFacade;
 import iuh.fit.impl.ProductImpl;
+import iuh.fit.impl.UserImpl;
 import iuh.fit.model.Product;
+import iuh.fit.model.Users;
 import iuh.fit.until.HibernateUtil;
 
 @WebServlet(urlPatterns = {"/home","/trang-chu"})
@@ -64,6 +68,8 @@ public class HomeController extends HttpServlet{
 	            soLuong++;
 	        }
 	        
+	        ////
+	     
 	  
 	    req.setAttribute("soLuong", soLuong);
 		req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);

@@ -57,6 +57,7 @@ public class LoginController extends HttpServlet{
 			HttpSession session= req.getSession();
 			session.setAttribute("acc", users);
 			resp.sendRedirect("home");
+//			
 		}
 		
 		System.out.println(pass);

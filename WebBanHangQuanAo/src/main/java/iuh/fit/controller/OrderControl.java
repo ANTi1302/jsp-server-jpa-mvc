@@ -17,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import iuh.fit.facade.CartFacade;
 import iuh.fit.facade.ProductFacade;
@@ -68,17 +69,25 @@ public class OrderControl extends HttpServlet {
             System.out.println("Amount: "+list.get(i).getAmount());
             System.out.println("UserID: "+list.get(i).getSellerID().getUserID());
             List<Object> cart=new ArrayList<Object>();
+            List<Object> cartacc=new ArrayList<Object>();
             Product product= new Product(list.get(i).getProductID());
             int ma=product.getProductID();
             cart.add(new Cart(users, product, list.get(i).getAmount()));
             //Thêm hóa đơn không cần login
+            HttpSession session = request.getSession();
+            Users username =  (Users) session.getAttribute("acc");
+            System.out.println(username.getUsername());
+            cartacc.add(new Cart(username, product, list.get(i).getAmount()));
+            if (username != null) {
+    			cartFacade.addCart(cartacc);
+    		}else {
             if (cartFacade.addCart(cart)) {
             	productFacade.capNhatProduct(ma);
             	System.out.println("đã cập nhật");
 			}else {
 				System.out.println("lỗi cập nhật");
 			}
-            
+    		}
         }
         
 //        List<Object> cart= new ArrayList<Object>();
@@ -89,7 +98,12 @@ public class OrderControl extends HttpServlet {
             o.setMaxAge(0);
             response.addCookie(o);
         }
+        
+       
+		
+        
         response.sendRedirect("home");
+        
     }
 
    

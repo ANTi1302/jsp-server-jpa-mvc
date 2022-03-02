@@ -70,7 +70,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
      }
     //So luong Tong Product
      int soLuongProduct= productFacade.demSLProduct();
-    
+    //Add cart wh
     req.setAttribute("tongSLProduct", soLuongProduct);
     req.setAttribute("soLuong", soLuongCc);
 	req.setAttribute("dsProduct", products);
