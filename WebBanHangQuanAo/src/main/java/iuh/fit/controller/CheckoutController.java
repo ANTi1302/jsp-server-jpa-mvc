@@ -54,7 +54,10 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
    ///
      HttpSession session= req.getSession();
      Users username =  (Users) session.getAttribute("acc");
+     double product= (double) session.getAttribute("total");
+    System.out.println("Xuat pr: "+product);
 				   req.setAttribute("soLuong", soLuong);
+				   
 				   
 					req.getRequestDispatcher("/template/view/custumer/checkout.jsp").forward(req, resp);
 	

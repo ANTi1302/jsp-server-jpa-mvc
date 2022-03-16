@@ -17,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import iuh.fit.facade.ProductFacade;
 import iuh.fit.impl.ProductImpl;
@@ -65,10 +66,12 @@ public class ShowCartControl extends HttpServlet {
 	        for (Product o : list) {
 	            total = total + o.getAmount() * o.getPrice();
 	        }
+	        HttpSession session01= request.getSession();
 	        request.setAttribute("list", list);
 	        request.setAttribute("total", total);
 	        request.setAttribute("vat", 0.1 * total);
 	        request.setAttribute("sum", 1.1 * total);
+	        session01.setAttribute("total", total);
 	        request.setAttribute("soLuong", soLuong);
 	        request.getRequestDispatcher("/template/view/custumer/cart.jsp").forward(request, response);
 	        

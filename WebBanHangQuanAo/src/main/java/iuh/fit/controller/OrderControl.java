@@ -109,7 +109,7 @@ public class OrderControl extends HttpServlet {
         }
         
 //		session01.setAttribute("acc", username);
-        System.out.println("/order input: "+ username.getUsername());
+//        System.out.println("/order input: "+ username.getUsername());
         
       //////////
 //    
