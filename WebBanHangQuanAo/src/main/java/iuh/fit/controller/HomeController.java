@@ -39,41 +39,45 @@ public class HomeController extends HttpServlet{
 		
 		req.setAttribute("listProduct", list);
 //		req.setAttribute("tuade", c);
-		
-		
-	        Cookie arr[] = req.getCookies();
-	       
+		try {
+			 Cookie arr[] = req.getCookies();
+		       
 				
+				
+		        PrintWriter out = resp.getWriter();
+		        List<Product> listCc = new ArrayList<>();
+		        ProductFacade dao = new ProductImpl();
+		        for (Cookie o : arr) {
+		            if (o.getName().equals("productID")) {
+		                String txt[] = o.getValue().split("/");
+		                for (String s : txt) {
+		                	listCc.add(dao.getProduct(s));
+		                }
+		            }
+		        }
+		        int soLuong=0;
+		        for (int i = 0; i < listCc.size(); i++) {
+		            int count = 1;
+		            for (int j = i+1; j < listCc.size(); j++) {
+		                if(listCc.get(i).getProductID() == listCc.get(j).getProductID()){
+		                    count++;
+		                    listCc.remove(j);
+		                    j--;
+		                    listCc.get(i).setAmount(count);
+		                }
+		            }
+		            soLuong++;
+		        }
+		      ///
+		        req.setAttribute("soLuong", soLuong);
+						  
+		} catch (Exception e) {
+			// TODO: handle exception
 			
-	        PrintWriter out = resp.getWriter();
-	        List<Product> listCc = new ArrayList<>();
-	        ProductFacade dao = new ProductImpl();
-	        for (Cookie o : arr) {
-	            if (o.getName().equals("productID")) {
-	                String txt[] = o.getValue().split("/");
-	                for (String s : txt) {
-	                	listCc.add(dao.getProduct(s));
-	                }
-	            }
-	        }
-	        int soLuong=0;
-	        for (int i = 0; i < listCc.size(); i++) {
-	            int count = 1;
-	            for (int j = i+1; j < listCc.size(); j++) {
-	                if(listCc.get(i).getProductID() == listCc.get(j).getProductID()){
-	                    count++;
-	                    listCc.remove(j);
-	                    j--;
-	                    listCc.get(i).setAmount(count);
-	                }
-	            }
-	            soLuong++;
-	        }
-	      ///
+		}
+		
 	       
-					   req.setAttribute("soLuong", soLuong);
-						req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
-	        
+			req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
 	 }
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
