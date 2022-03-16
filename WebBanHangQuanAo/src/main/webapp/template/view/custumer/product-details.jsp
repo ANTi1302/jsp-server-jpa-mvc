@@ -143,7 +143,7 @@
 						</div>
 
 						<!-- Add to Cart Form -->
-						<form class="cart clearfix" method="post">
+						<form class="cart clearfix" method="get" action="/WebBanHangQuanAo/cart">
 							<div class="cart-btn d-flex mb-50">
 								<p>Qty</p>
 								<div class="quantity">
@@ -157,7 +157,7 @@
 										class="fa fa-caret-up" aria-hidden="true"></i></span>
 								</div>
 							</div>
-							<button type="submit" name="addtocart" value="id"
+							<button type="submit" name="addtocart" value="/cart?id=${o.productID}"
 								class="btn amado-btn">Add to cart</button>
 						</form>
 					</div>

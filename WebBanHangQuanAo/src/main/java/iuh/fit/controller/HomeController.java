@@ -40,7 +40,11 @@ public class HomeController extends HttpServlet{
 		req.setAttribute("listProduct", list);
 //		req.setAttribute("tuade", c);
 		
+		
 	        Cookie arr[] = req.getCookies();
+	       
+				
+			
 	        PrintWriter out = resp.getWriter();
 	        List<Product> listCc = new ArrayList<>();
 	        ProductFacade dao = new ProductImpl();
@@ -69,8 +73,7 @@ public class HomeController extends HttpServlet{
 	       
 					   req.setAttribute("soLuong", soLuong);
 						req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
-				
-	          
+	        
 	 }
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
