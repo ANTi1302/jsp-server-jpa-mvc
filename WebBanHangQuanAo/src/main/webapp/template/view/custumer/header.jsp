@@ -132,7 +132,7 @@
 					<li><a href="<c:url value="/logout" />">Logout</a></li>
 				</c:if>
 				<li><a href="<c:url value="/print" />">Cart</a></li>
-				<li><a href="<c:url value="/template/view/custumer/checkout.jsp" />">Checkout</a></li>
+				<li><a href="<c:url value="/check" />">Checkout</a></li>
 			</ul>
 		</nav>
 		<!-- Button Group -->
