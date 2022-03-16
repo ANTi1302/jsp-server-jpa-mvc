@@ -8,6 +8,7 @@ package iuh.fit.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -34,6 +35,8 @@ public class OrderControl extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	  HttpSession session = request.getSession();
+          Users username =  (Users) session.getAttribute("acc");
         response.setContentType("text/html;charset=UTF-8");
         EntityManager em = HibernateUtil.getInstance().getEntityManager();
         Cookie arr[] = request.getCookies();
@@ -41,7 +44,7 @@ public class OrderControl extends HttpServlet {
         
        ProductFacade productFacade= new ProductImpl();
        CartFacade cartFacade=new CartImpl();
-       
+     
        
         for (Cookie o : arr) {
             if (o.getName().equals("productID")) {
@@ -74,9 +77,8 @@ public class OrderControl extends HttpServlet {
             int ma=product.getProductID();
             cart.add(new Cart(users, product, list.get(i).getAmount()));
             //Thêm hóa đơn không cần login
-            HttpSession session = request.getSession();
-            Users username =  (Users) session.getAttribute("acc");
-//            System.out.println(username.getUsername());
+           
+
             cartacc.add(new Cart(username, product, list.get(i).getAmount()));
             if (username != null) {
     			cartFacade.addCart(cartacc);
@@ -95,13 +97,30 @@ public class OrderControl extends HttpServlet {
 //        cart.add(list);
 //        System.out.println(cart);
         for (Cookie o : arr) {
-            o.setMaxAge(0);
-            response.addCookie(o);
+        	if (o.getName().equals("productID")) {
+        		o.setMaxAge(0);
+                response.addCookie(o);
+			}else {
+				 HttpSession session01= request.getSession();
+		    		session01.setAttribute("acc", username);
+			}
+          
+           
         }
         
-       
-		
+//		session01.setAttribute("acc", username);
+        System.out.println("/order input: "+ username.getUsername());
         
+      //////////
+//    
+//        HttpSession session01= request.getSession();
+//		session01.setAttribute("acc", username);
+//		 if (session01 != null) {
+//			 System.out.println("Đây nè: "+session01.getAttribute("acc"));
+//			 response.sendRedirect("home");
+//			}else 
+		
+       
         response.sendRedirect("home");
 //        request.getRequestDispatcher("/template/view/custumer/index.jsp").forward(request, response);
         

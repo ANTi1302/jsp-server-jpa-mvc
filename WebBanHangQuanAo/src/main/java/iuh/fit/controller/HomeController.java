@@ -34,8 +34,6 @@ public class HomeController extends HttpServlet{
 		EntityManager em = HibernateUtil.getInstance().getEntityManager();
 		ProductFacade productFacade= new ProductImpl();
 		List<Product> list= productFacade.dsProductTop9();
-		
-		
 //		String[] c={"Home","Shop","Product","Cart","Check out"};
 		
 		
@@ -67,18 +65,22 @@ public class HomeController extends HttpServlet{
 	            }
 	            soLuong++;
 	        }
-	        
-	        ////
-	        HttpSession session = req.getSession();
-            Users username =  (Users) session.getAttribute("acc"); 
-	  
-	    req.setAttribute("soLuong", soLuong);
-		req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
-	}
-	
+	      ///
+	       
+					   req.setAttribute("soLuong", soLuong);
+						req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
+				
+	          
+	 }
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		 HttpSession session = req.getSession();
+         Users username =  (Users) session.getAttribute("acc");
+         if (username != null) {
+       	  System.out.println("home xuất: "+username.getUsername());
+      		req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
+         }else {
+					req.getRequestDispatcher("/template/view/custumer/index.jsp").forward(req, resp);
+			}
 	}
 }

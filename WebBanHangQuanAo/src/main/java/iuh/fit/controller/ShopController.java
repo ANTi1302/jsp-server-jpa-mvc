@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
