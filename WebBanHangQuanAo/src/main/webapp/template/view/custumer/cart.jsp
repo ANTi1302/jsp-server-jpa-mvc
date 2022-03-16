@@ -64,9 +64,15 @@
                                             <div class="qty-btn d-flex">
                                                 <p>Qty</p>
                                                 <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="0" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                  
+                                                        <a href="sub?id=${o.productID}"><button class="btnSub">-</button></a> <strong>${o.amount}</strong>
+                                                        <a href="cart?id=${o.productID}"><button class="btnAdd">+</button></a>
+                                                    <td>
+                                                    <div class="align-middle"><a href="remove?id=${o.productID}" class="text-dark">
+                                                        <button type="button" class="btn btn-danger">Delete</button>
+                                                        </a>
+                                                    </div>
+                                                    </td>
                                                 </div>
                                             </div>
                                         </td>
