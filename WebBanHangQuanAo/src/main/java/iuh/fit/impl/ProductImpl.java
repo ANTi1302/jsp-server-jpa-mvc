@@ -151,7 +151,13 @@ public class ProductImpl extends AbstractImpl implements ProductFacade{
 	}
 
 	 public Product getProduct(String txt) throws RemoteException {
-		 return (Product) getSingle("select * from Product where productID = '" + txt+"'" , Product.class);
+		 try {
+			 return (Product) getSingle("select * from Product where productID = '" + txt+"'" , Product.class);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+		 
 	        
 	    }
 
