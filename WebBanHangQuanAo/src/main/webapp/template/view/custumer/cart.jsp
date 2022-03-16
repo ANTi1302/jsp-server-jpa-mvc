@@ -45,6 +45,7 @@
                                         <th>Name</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
+                                        <th>Choose</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,18 +61,17 @@
                                         <td class="price">
                                             <span>$${o.price}</span>
                                         </td>
-                                        <td class="qty">
+                                        <td class="align-middle"">
                                             <div class="qty-btn d-flex">
-                                                <p>Qty</p>
-                                                <div class="quantity">
-                                                  
+                                               
+                                                <div>
+                                                 
                                                         <a href="sub?id=${o.productID}"><button class="btnSub">-</button></a> <strong>${o.amount}</strong>
                                                         <a href="cart?id=${o.productID}"><button class="btnAdd">+</button></a>
-                                                    <td>
-                                                    <div class="align-middle"><a href="remove?id=${o.productID}" class="text-dark">
+                                                   
+                                                    <td class="align-middle"><a href="remove?id=${o.productID}" class="text-dark">
                                                         <button type="button" class="btn btn-danger">Delete</button>
                                                         </a>
-                                                    </div>
                                                     </td>
                                                 </div>
                                             </div>
