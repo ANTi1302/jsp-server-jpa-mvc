@@ -40,6 +40,7 @@ public class ShowCartControl extends HttpServlet {
 	        PrintWriter out = response.getWriter();
 	        List<Product> list = new ArrayList<>();
 	        ProductFacade dao = new ProductImpl();
+	        
 	        for (Cookie o : arr) {
 	            if (o.getName().equals("productID")) {
 	                String txt[] = o.getValue().split("/");

@@ -27,5 +27,7 @@
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-
+<session-config>
+<tracking-mode>COOKIE</tracking-mode>
+</session-config>
 </web-app>
