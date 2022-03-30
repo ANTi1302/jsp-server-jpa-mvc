@@ -32,16 +32,18 @@ public class SearchController extends HttpServlet{
 		ProductFacade productFacade= new ProductImpl();
 		String ten=req.getParameter("txt");
 		String indexPage= req.getParameter("index");
+		String[] tenx=ten.split("[,; \\t\\n\\r]+");
+		for (String string : tenx) {
 		
 		
 		if (indexPage ==null) {
 			indexPage="1";
 		}
 		int index= Integer.parseInt(indexPage);
-		List<Product> products= productFacade.dsProductTop6(index,ten);
+		List<Product> products= productFacade.dsProductTop6(index,string);
 		
 		//Phan trang
-		int soLuong= productFacade.demSLKhiSearch(ten);
+		int soLuong= productFacade.demSLKhiSearch(string);
 		
 		int endpage= soLuong/3;
 		if (soLuong%3 !=0) {
@@ -51,8 +53,8 @@ public class SearchController extends HttpServlet{
 		req.setAttribute("dsProduct", products);
 		req.setAttribute("endpage", endpage);
 		req.setAttribute("tag", index);
-		req.setAttribute("tenS", ten);
-		
+		req.setAttribute("tenS", string);
+		}
 		
 //		HttpSession session = req.getSession();
 //		List<String> items = (List<String>) req.getSession().getAttribute("history");
