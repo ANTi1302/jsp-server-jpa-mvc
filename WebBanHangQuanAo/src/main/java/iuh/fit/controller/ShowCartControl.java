@@ -57,10 +57,10 @@ public class ShowCartControl extends HttpServlet {
 	                    count++;
 	                    list.remove(j);
 	                    j--;
-	                    list.get(i).setAmount(count);
 	                }
 	            }
 	            soLuong++;
+	            list.get(i).setAmount(count);
 	        }
 	        
 	        double total = 0;

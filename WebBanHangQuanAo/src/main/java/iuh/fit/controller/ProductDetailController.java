@@ -56,10 +56,10 @@ public class ProductDetailController extends HttpServlet {
 	                    count++;
 	                    listCc.remove(j);
 	                    j--;
-	                    listCc.get(i).setAmount(count);
 	                }
 	            }
 	            soLuong++;
+	            listCc.get(i).setAmount(count);
 	        }
 	        
 	  

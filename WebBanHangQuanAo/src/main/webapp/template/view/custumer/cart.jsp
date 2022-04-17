@@ -99,7 +99,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <!-- ##### Main Content Wrapper End ##### -->
     <!-- ##### Newsletter Area Start ##### -->
        <%@ include file="footer.jsp" %>

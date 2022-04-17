@@ -68,13 +68,22 @@
 										}
 										// getParameter tra ve String (todo-demo.jsp?theItem=? thi add ?)
 										String theItem = request.getParameter("txt");
+										
+											
+									
 										if (theItem != null) {
-											items.add(theItem);
+										
+												items.add(theItem);
+										
 										}
+									
 										%>
 										<%
+										
 										for (String temp : items)
+										{
 											out.println("<div class='dropdown-item'><a href='/WebBanHangQuanAo/search?txt="+temp+"'>	" + temp + "</a></div>");
+										}
 										%>
 									</c:forEach>
 

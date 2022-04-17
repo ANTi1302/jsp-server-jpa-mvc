@@ -62,10 +62,10 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
                  count++;
                  listCc.remove(j);
                  j--;
-                 listCc.get(i).setAmount(count);
              }
          }
          soLuongCc++;
+         listCc.get(i).setAmount(count);
      }
     //So luong Tong Product
      int soLuongProduct= productFacade.demSLProduct();

@@ -59,7 +59,7 @@
 	href="<c:url value="/template/css/font-awesome.min.css" />">
 <link rel="stylesheet"
 	href="<c:url value="/template/css/core-style.css" /> ">
-
+ <link rel="stylesheet" href="<c:url value="/template/css/font-awesome.css"/> ">
 </head>
 
 <body>

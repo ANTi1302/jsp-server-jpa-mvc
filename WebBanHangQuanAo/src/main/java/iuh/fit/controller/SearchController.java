@@ -33,6 +33,7 @@ public class SearchController extends HttpServlet{
 		String ten=req.getParameter("txt");
 		String indexPage= req.getParameter("index");
 		String[] tenx=ten.split("[,; \\t\\n\\r]+");
+		
 		for (String string : tenx) {
 		
 		
@@ -88,10 +89,10 @@ public class SearchController extends HttpServlet{
 	                    count++;
 	                    listCc.remove(j);
 	                    j--;
-	                    listCc.get(i).setAmount(count);
 	                }
 	            }
 	            soLuongCc++;
+	            listCc.get(i).setAmount(count);
 	        }
 	        
 	  
