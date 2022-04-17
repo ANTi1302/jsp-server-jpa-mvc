@@ -2,5 +2,6 @@
 - uc2: loi phan trang: lap lai san pham o trang cuoi???
 
 
-- uc4: loi search: tim kiem chua bo khoang trang????? (goi y: bo khoang trang trong js)
+- (Pass)uc4: loi search: tim kiem chua bo khoang trang????? (goi y: bo khoang trang trong js) 
 - uc3: loi search: load lai trang -> tim kiem them 1 value??? (goi y: if else cho request tra ve neu co value trung url thi ko tim kiem)
+- uc5: hoan tat xu ly login gg ??? (moi login chua luu id vao database + chuyen huong trang da dang nhap)
